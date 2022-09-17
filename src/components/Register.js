@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 import "../App.css";
@@ -12,6 +12,12 @@ function Register() {
   const [data, setData] = useState({ email: "", password: "", name: "" });
   const [messageError, setMessageError] = useState([]);
 
+  useEffect(() => {
+    axios.post("http://localhost:8000/register", data).then((res) => {
+      setMessageError(res.data);
+    });
+  }, [data]);
+
   const collectionData = (e) => {
     const name = e.target.name;
     const value = e.target.value;
@@ -20,18 +26,23 @@ function Register() {
 
   const sendDataRegister = () => {
     try {
-      axios.post("http://localhost:8000/register", data).then((res) => {
-        setMessageError(res.data);
-      });
       errorMessage();
-      // toast.error(messageError[0].msg || "error");
     } catch (error) {
       console.log(error, "error from register client");
     }
   };
 
   const errorMessage = () => {
-    toast("succesr");
+    if (messageError.length > 0) {
+      if (messageError.length > 0 || messageError.length === 0) {
+        messageError.map((errorMSG) => {
+          toast.error(errorMSG.msg);
+        });
+      }
+    } else {
+      toast(messageError.message);
+      setData({ email: "", password: "", name: "" });
+    }
   };
 
   return (
