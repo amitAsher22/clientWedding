@@ -8,3 +8,8 @@ a {
   border: none;
   border-radius: 0.4rem;
 }
+
+html {
+  margin: auto;
+  height: 100%;
+}

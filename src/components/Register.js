@@ -2,15 +2,38 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 import "../App.css";
+import axios from "axios";
+
+///react-toastify
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 function Register() {
   const [data, setData] = useState({ email: "", password: "", name: "" });
+  const [messageError, setMessageError] = useState([]);
 
   const collectionData = (e) => {
     const name = e.target.name;
     const value = e.target.value;
     setData({ ...data, [name]: value });
   };
+
+  const sendDataRegister = () => {
+    try {
+      axios.post("http://localhost:8000/register", data).then((res) => {
+        setMessageError(res.data);
+      });
+      errorMessage();
+      // toast.error(messageError[0].msg || "error");
+    } catch (error) {
+      console.log(error, "error from register client");
+    }
+  };
+
+  const errorMessage = () => {
+    toast("succesr");
+  };
+
   return (
     <LoginDiv>
       <SecondDivLogin>
@@ -29,12 +52,13 @@ function Register() {
           name="password"
           onChange={(e) => collectionData(e)}
         />
-        <BtnLogin>register</BtnLogin>
+        <BtnLogin onClick={() => sendDataRegister()}>register</BtnLogin>
         <Hrstyle />
         <Link to="/">
           <LoginUser>Go Login</LoginUser>
         </Link>
       </SecondDivLogin>
+      <ToastContainer />
     </LoginDiv>
   );
 }

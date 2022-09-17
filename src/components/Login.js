@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 import "../App.css";
+import axios from "axios";
 // import { createGlobalStyle } from "styled-components";
 
 function Login() {
@@ -11,7 +12,16 @@ function Login() {
     const name = e.target.name;
     const value = e.target.value;
     setData({ ...data, [name]: value });
-    console.log(data);
+  };
+
+  const sendData = () => {
+    try {
+      axios.post("http://localhost:8000/login/login", data).then((res) => {
+        console.log(res.data);
+      });
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   return (
@@ -27,7 +37,7 @@ function Login() {
           name="password"
           onChange={(e) => collectionLogin(e)}
         />
-        <BtnLogin>Log In</BtnLogin>
+        <BtnLogin onClick={() => sendData()}>Log In</BtnLogin>
         <Hrstyle />
         <Link to="/register">
           <CreateAccountBtn>Create new account</CreateAccountBtn>
