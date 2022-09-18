@@ -33,15 +33,19 @@ function Register() {
   };
 
   const errorMessage = () => {
-    if (messageError.length > 0) {
-      if (messageError.length > 0 || messageError.length === 0) {
-        messageError.map((errorMSG) => {
-          toast.error(errorMSG.msg);
+    try {
+      if (messageError.message.length > 0) {
+        messageError.message.map((errorMSG) => {
+          console.log(errorMSG.msg === "registration succeeded !");
+          if (errorMSG.msg === "registration succeeded !") {
+            toast.success(errorMSG.msg);
+          } else {
+            toast.error(errorMSG.msg);
+          }
         });
       }
-    } else {
-      toast(messageError.message);
-      setData({ email: "", password: "", name: "" });
+    } catch (error) {
+      console.log("error from register", error);
     }
   };
 
