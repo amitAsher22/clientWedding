@@ -36,9 +36,12 @@ function Register() {
     try {
       if (messageError.message.length > 0) {
         messageError.message.map((errorMSG) => {
-          console.log(errorMSG.msg === "registration succeeded !");
           if (errorMSG.msg === "registration succeeded !") {
-            toast.success(errorMSG.msg);
+            toast.success(errorMSG.msg, {
+              pauseOnFocusLoss: true,
+              autoClose: 9000,
+            });
+            setTimeout(clearInputs, 9000);
           } else {
             toast.error(errorMSG.msg);
           }
@@ -49,6 +52,10 @@ function Register() {
     }
   };
 
+  const clearInputs = () => {
+    setData({ email: "", password: "", name: "" });
+  };
+
   return (
     <LoginDiv>
       <SecondDivLogin>
@@ -56,16 +63,20 @@ function Register() {
           placeholder="Email"
           name="email"
           onChange={(e) => collectionData(e)}
+          value={data.email}
         />
         <Input
           placeholder="Name"
           name="name"
           onChange={(e) => collectionData(e)}
+          value={data.name}
         />
         <Input
           placeholder="Password"
           name="password"
           onChange={(e) => collectionData(e)}
+          value={data.password}
+          type="password"
         />
         <BtnLogin onClick={() => sendDataRegister()}>register</BtnLogin>
         <Hrstyle />
@@ -73,7 +84,7 @@ function Register() {
           <LoginUser>Go Login</LoginUser>
         </Link>
       </SecondDivLogin>
-      <ToastContainer />
+      <ToastContainer draggable={false} />
     </LoginDiv>
   );
 }
