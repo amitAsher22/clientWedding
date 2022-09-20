@@ -3,7 +3,8 @@ import styled from "styled-components";
 import { Link } from "react-router-dom";
 import "../App.css";
 import axios from "axios";
-// import { createGlobalStyle } from "styled-components";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 function Login() {
   const [data, setData] = useState({ email: "", password: "" });
@@ -15,12 +16,19 @@ function Login() {
   };
 
   const sendData = () => {
-    try {
-      axios.post("http://localhost:8000/login/login", data).then((res) => {
-        console.log(res.data);
+    axios.post("http://localhost:8000/login/login", data).then((res) => {
+      const data = res.data;
+      errorMessages(data);
+    });
+  };
+
+  const errorMessages = (data) => {
+    const errorMessagsToast = data.error.errors;
+
+    if (errorMessagsToast) {
+      errorMessagsToast.map((oneMessage) => {
+        toast.error(oneMessage.msg);
       });
-    } catch (error) {
-      console.log(error);
     }
   };
 
@@ -42,6 +50,7 @@ function Login() {
         <Link to="/register">
           <CreateAccountBtn>Create new account</CreateAccountBtn>
         </Link>
+        <ToastContainer />
       </SecondDivLogin>
     </LoginDiv>
   );

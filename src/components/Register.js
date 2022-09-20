@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 import "../App.css";
@@ -10,13 +10,6 @@ import "react-toastify/dist/ReactToastify.css";
 
 function Register() {
   const [data, setData] = useState({ email: "", password: "", name: "" });
-  const [messageError, setMessageError] = useState([]);
-
-  useEffect(() => {
-    axios.post("http://localhost:8000/register", data).then((res) => {
-      setMessageError(res.data);
-    });
-  }, [data]);
 
   const collectionData = (e) => {
     const name = e.target.name;
@@ -26,34 +19,27 @@ function Register() {
 
   const sendDataRegister = () => {
     try {
-      errorMessage();
+      axios
+        .post("http://localhost:8000/register/register", data)
+        .then((res) => {
+          const data = res.data;
+          errorMessage(data);
+        });
     } catch (error) {
       console.log(error, "error from register client");
     }
   };
 
-  const errorMessage = () => {
-    try {
-      if (messageError.message.length > 0) {
-        messageError.message.map((errorMSG) => {
-          if (errorMSG.msg === "registration succeeded !") {
-            toast.success(errorMSG.msg, {
-              pauseOnFocusLoss: true,
-              autoClose: 9000,
-            });
-            setTimeout(clearInputs, 9000);
-          } else {
-            toast.error(errorMSG.msg);
-          }
-        });
-      }
-    } catch (error) {
-      console.log("error from register", error);
+  const errorMessage = (data) => {
+    if (data.result === "The user exists in the system") {
+      toast.error("The user exists in the system");
+    } else if (data.result === "register success") {
+      toast.success("register success");
+    } else {
+      data.result.errors.map((message) => {
+        toast.error(message.msg);
+      });
     }
-  };
-
-  const clearInputs = () => {
-    setData({ email: "", password: "", name: "" });
   };
 
   return (
