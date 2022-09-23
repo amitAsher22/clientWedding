@@ -18,13 +18,13 @@ function Login() {
   const sendData = () => {
     axios.post("http://localhost:8000/login/login", data).then((res) => {
       const data = res.data;
+      console.log(data);
       errorMessages(data);
     });
   };
 
   const errorMessages = (data) => {
     const errorMessagsToast = data.error.errors;
-
     if (errorMessagsToast) {
       errorMessagsToast.map((oneMessage) => {
         toast.error(oneMessage.msg);
