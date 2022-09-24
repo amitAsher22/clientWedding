@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "../App.css";
 import axios from "axios";
 
@@ -10,6 +10,7 @@ import "react-toastify/dist/ReactToastify.css";
 
 function Register() {
   const [data, setData] = useState({ email: "", password: "", name: "" });
+  const navigate = useNavigate();
 
   const collectionData = (e) => {
     const name = e.target.name;
@@ -34,7 +35,7 @@ function Register() {
     if (data.result === "The user exists in the system") {
       toast.error("The user exists in the system");
     } else if (data.result === "register success") {
-      toast.success("register success");
+      toast.success(() => "register success", navigate("/"));
     } else {
       data.result.errors.map((message) => {
         toast.error(message.msg);
