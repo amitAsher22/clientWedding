@@ -38,6 +38,7 @@ function Register() {
       toast.success(() => "register success", navigate("/"));
     } else {
       resultBack.result.errors.map((message) => {
+        console.log(message.msg);
         toast.error(message.msg);
       });
     }
