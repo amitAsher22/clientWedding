@@ -18,20 +18,24 @@ function Login() {
   const sendData = () => {
     axios.post("http://localhost:8000/login/login", data).then((res) => {
       const data = res.data;
-      console.log(data);
       errorMessages(data);
     });
   };
 
   const errorMessages = (data) => {
-    const errorMessagsToast = data.error.errors;
-    if (errorMessagsToast) {
-      errorMessagsToast.map((oneMessage) => {
-        toast.error(oneMessage.msg);
+    if (data.error) {
+      data.error.errors.map((msgError) => {
+        toast.error(msgError.msg);
       });
     }
+    if (data.result) {
+      if (data.result.length === 0) {
+        toast.error("create new account");
+      } else {
+        toast("sucsess");
+      }
+    }
   };
-
   return (
     <LoginDiv>
       <SecondDivLogin>
