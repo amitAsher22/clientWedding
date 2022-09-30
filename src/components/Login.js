@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 import "../App.css";
@@ -6,9 +6,14 @@ import axios from "axios";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import GoogleButton from "react-google-button";
+import { gapi } from "gapi-script";
+import jwt_decode from "jwt-decode";
+import { GoogleLogin } from "@react-oauth/google";
 
 function Login() {
   const [data, setData] = useState({ email: "", password: "" });
+  const clientId =
+    "779329735420-mrklt4ktdq2u3d7m57gbjhbj0hv386hr.apps.googleusercontent.com";
 
   const collectionLogin = (e) => {
     const name = e.target.name;
@@ -37,15 +42,45 @@ function Login() {
       }
     }
   };
+
+  const onSuccess = (res) => {
+    console.log("LOGIN SUCCESS ! curent  :  res :", res);
+  };
+  const onFailure = (res) => {
+    console.log("LOGIN FAILED  : res: ", res);
+  };
+
+  // useEffect(() => {
+  //   function start() {
+  //     gapi.client.init({
+  //       clientid: clientId,
+  //       scope: "",
+  //     });
+  //   }
+
+  //   gapi.load("client : auth2", start);
+  // });
+
   return (
     <LoginDiv>
-      <GoogleButton
-        type="light" // can be light or dark
-        onClick={() => {
-          console.log("Google button clicked");
-        }}
-      />
       <SecondDivLogin>
+        <GoogleButton
+          style={{ width: "100%" }}
+          clientid={clientId}
+          onSuccess={onSuccess}
+          onFailure={onFailure}
+        />
+        <GoogleLogin
+          onSuccess={(credentialResponse) => {
+            console.log(credentialResponse.credential);
+            var decoded = jwt_decode(credentialResponse.credential);
+            console.log(decoded);
+          }}
+          onError={() => {
+            console.log("Login Failed");
+          }}
+        />
+        <TextMiddle>or</TextMiddle>
         <Input
           placeholder="Email"
           name="email"
@@ -54,6 +89,7 @@ function Login() {
         <Input
           placeholder="Password"
           name="password"
+          type="password"
           onChange={(e) => collectionLogin(e)}
         />
         <BtnLogin onClick={() => sendData()}>Log In</BtnLogin>
@@ -123,5 +159,19 @@ const CreateAccountBtn = styled.button`
   margin: auto;
   &:hover {
     cursor: pointer;
+  }
+`;
+
+const TextMiddle = styled.h2`
+  display: flex;
+  flex-direction: row;
+  gap: 0.5rem;
+
+  &:after,
+  &:before {
+    content: "";
+    flex: 1 1;
+    border-bottom: 1px solid;
+    margin: auto;
   }
 `;
