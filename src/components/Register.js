@@ -23,21 +23,21 @@ function Register() {
       axios
         .post("http://localhost:8000/register/register", data)
         .then((res) => {
-          const data = res.data;
-          errorMessage(data);
+          const resultBack = res.data;
+          errorMessage(resultBack);
         });
     } catch (error) {
       console.log(error, "error from register client");
     }
   };
 
-  const errorMessage = (data) => {
-    if (data.result === "The user exists in the system") {
+  const errorMessage = (resultBack) => {
+    if (resultBack.result === "The user exists in the system") {
       toast.error("The user exists in the system");
-    } else if (data.result === "register success") {
+    } else if (resultBack.result === "register success") {
       toast.success(() => "register success", navigate("/"));
     } else {
-      data.result.errors.map((message) => {
+      resultBack.result.errors.map((message) => {
         toast.error(message.msg);
       });
     }
