@@ -5,6 +5,7 @@ import "../App.css";
 import axios from "axios";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import GoogleButton from "react-google-button";
 
 function Login() {
   const [data, setData] = useState({ email: "", password: "" });
@@ -38,6 +39,12 @@ function Login() {
   };
   return (
     <LoginDiv>
+      <GoogleButton
+        type="light" // can be light or dark
+        onClick={() => {
+          console.log("Google button clicked");
+        }}
+      />
       <SecondDivLogin>
         <Input
           placeholder="Email"
@@ -63,7 +70,7 @@ function Login() {
 export default Login;
 
 const LoginDiv = styled.div`
-  ackground-color: #fff;
+  ackground-color: #d5d4d2;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1), 0 9px 10px rgba(0, 0, 0, 0.1);
   width: 30%;
   height: 80%;
