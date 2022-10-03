@@ -25,13 +25,14 @@ function Login() {
   };
 
   const errorMessages = (data) => {
+    console.log("data", data);
     if (data.error) {
       data.error.errors.map((msgError) => {
         toast.error(msgError.msg);
       });
     }
-    if (data.result) {
-      if (data.result.length === 0) {
+    if (data.result.user) {
+      if (data.result.user.length === 0) {
         toast.error("create new account");
       } else {
         toast("sucsess");
