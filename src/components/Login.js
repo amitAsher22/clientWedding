@@ -43,10 +43,16 @@ function Login() {
     <LoginDiv>
       <SecondDivLogin>
         <GoogleLogin
+          size="sm"
           onSuccess={(credentialResponse) => {
             console.log(credentialResponse.credential);
             var decoded = jwt_decode(credentialResponse.credential);
-            console.log(decoded);
+            console.log("decode", decoded);
+            if (decoded.email_verified) {
+              console.log("verify!!!!");
+            } else {
+              console.log("not verify !!");
+            }
           }}
           onError={() => {
             console.log("Login Failed");
