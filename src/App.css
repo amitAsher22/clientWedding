@@ -13,3 +13,7 @@ html {
   margin: auto;
   height: 100%;
 }
+
+.errorMessage {
+  color: red;
+}

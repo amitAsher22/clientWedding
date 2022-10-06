@@ -1,47 +1,37 @@
-import React, { useState } from "react";
+import React from "react";
 import styled from "styled-components";
 import { Link, useNavigate } from "react-router-dom";
 import "../App.css";
 import axios from "axios";
-
 ///react-toastify
-import { ToastContainer, toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
+// import { ToastContainer, toast } from "react-toastify";
+// import "react-toastify/dist/ReactToastify.css";
+import { useFormik } from "formik";
+import * as Yup from "yup";
 
 function Register() {
-  const [data, setData] = useState({ email: "", password: "", name: "" });
-  const navigate = useNavigate();
-
-  const collectionData = (e) => {
-    const name = e.target.name;
-    const value = e.target.value;
-    setData({ ...data, [name]: value });
-  };
-
-  const sendDataRegister = () => {
-    try {
+  const formik = useFormik({
+    initialValues: {
+      email: "",
+      password: "",
+      name: "",
+    },
+    validationSchema: Yup.object({
+      email: Yup.string()
+        .email("Invalud email address")
+        .required("email is Required"),
+      password: Yup.string().required("Password is Required"),
+      name: Yup.string().required("Name is Required"),
+    }),
+    onSubmit: (values) => {
       axios
-        .post("http://localhost:8000/register/register", data)
+        .post("http://localhost:8000/register/register", values)
         .then((res) => {
           const resultBack = res.data;
-          errorMessage(resultBack);
+          console.log("data after send mongodb", resultBack);
         });
-    } catch (error) {
-      console.log(error, "error from register client");
-    }
-  };
-
-  const errorMessage = (resultBack) => {
-    if (resultBack.result === "The user exists in the system") {
-      toast.error("The user exists in the system");
-    } else if (resultBack.result === "register success") {
-      toast.success(() => "register success", navigate("/"));
-    } else {
-      resultBack.result.errors.map((message) => {
-        toast.error(message.msg);
-      });
-    }
-  };
+    },
+  });
 
   return (
     <LoginDiv>
@@ -49,29 +39,40 @@ function Register() {
         <Input
           placeholder="Email"
           name="email"
-          onChange={(e) => collectionData(e)}
-          value={data.email}
+          onChange={formik.handleChange}
+          value={formik.values.email}
         />
+        {formik.errors.email ? (
+          <span className="errorMessage">{formik.errors.email}</span>
+        ) : null}
         <Input
           placeholder="Name"
           name="name"
-          onChange={(e) => collectionData(e)}
-          value={data.name}
+          onChange={formik.handleChange}
+          value={formik.values.name}
         />
+        {formik.errors.name ? (
+          <span className="errorMessage">{formik.errors.name}</span>
+        ) : null}
         <Input
           placeholder="Password"
           name="password"
-          onChange={(e) => collectionData(e)}
-          value={data.password}
+          onChange={formik.handleChange}
+          value={formik.values.password}
           type="password"
         />
-        <BtnLogin onClick={() => sendDataRegister()}>register</BtnLogin>
+        {formik.errors.password ? (
+          <span className="errorMessage">{formik.errors.password}</span>
+        ) : null}
+        <BtnLogin type="submit" onClick={formik.handleSubmit}>
+          register
+        </BtnLogin>
         <Hrstyle />
         <Link to="/">
           <LoginUser>Go Login</LoginUser>
         </Link>
       </SecondDivLogin>
-      <ToastContainer draggable={false} />
+      {/* <ToastContainer draggable={false} /> */}
     </LoginDiv>
   );
 }

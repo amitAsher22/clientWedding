@@ -3,42 +3,34 @@ import styled from "styled-components";
 import { Link } from "react-router-dom";
 import "../App.css";
 import axios from "axios";
-import { ToastContainer, toast } from "react-toastify";
+// import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { GoogleLogin } from "@react-oauth/google";
 import jwt_decode from "jwt-decode";
+import { useFormik } from "formik";
+import * as Yup from "yup";
 
 function Login() {
   const [data, setData] = useState({ email: "", password: "" });
 
-  const collectionLogin = (e) => {
-    const name = e.target.name;
-    const value = e.target.value;
-    setData({ ...data, [name]: value });
-  };
-
-  const sendData = () => {
-    axios.post("http://localhost:8000/login/login", data).then((res) => {
-      const data = res.data;
-      errorMessages(data);
-    });
-  };
-
-  const errorMessages = (data) => {
-    console.log("data", data);
-    if (data.error) {
-      data.error.errors.map((msgError) => {
-        toast.error(msgError.msg);
+  const formik = useFormik({
+    initialValues: {
+      email: "",
+      password: "",
+    },
+    validationSchema: Yup.object({
+      email: Yup.string()
+        .email("Invalud email address")
+        .required("Email is Required"),
+      password: Yup.string().required("password is Required"),
+    }),
+    onSubmit: (values) => {
+      axios.post("http://localhost:8000/login/login", values).then((res) => {
+        const data = res.data;
+        console.log("after send data to mongodb", data);
       });
-    }
-    if (data.result.user) {
-      if (data.result.user.length === 0) {
-        toast.error("create new account");
-      } else {
-        toast("sucsess");
-      }
-    }
-  };
+    },
+  });
 
   return (
     <LoginDiv>
@@ -48,7 +40,6 @@ function Login() {
           onSuccess={(credentialResponse) => {
             console.log(credentialResponse.credential);
             var decoded = jwt_decode(credentialResponse.credential);
-            console.log("decode", decoded);
             if (decoded.email_verified) {
               console.log("verify!!!!");
             } else {
@@ -60,23 +51,36 @@ function Login() {
           }}
         />
         <TextMiddle>or</TextMiddle>
+
         <Input
           placeholder="Email"
           name="email"
-          onChange={(e) => collectionLogin(e)}
+          type="email"
+          value={formik.values.email}
+          onChange={formik.handleChange}
         />
+        {formik.errors.email ? (
+          <span className="errorMessage">{formik.errors.email}</span>
+        ) : null}
         <Input
           placeholder="Password"
           name="password"
           type="password"
-          onChange={(e) => collectionLogin(e)}
+          value={formik.values.password}
+          onChange={formik.handleChange}
         />
-        <BtnLogin onClick={() => sendData()}>Log In</BtnLogin>
+        {formik.errors.password ? (
+          <span className="errorMessage">{formik.errors.password}</span>
+        ) : null}
+        <BtnLogin type="submit" onClick={formik.handleSubmit}>
+          Log In
+        </BtnLogin>
+
         <Hrstyle />
         <Link to="/register">
           <CreateAccountBtn>Create new account</CreateAccountBtn>
         </Link>
-        <ToastContainer />
+        {/* <ToastContainer /> */}
       </SecondDivLogin>
     </LoginDiv>
   );
