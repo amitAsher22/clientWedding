@@ -9,6 +9,7 @@ import { GiAmpleDress } from "react-icons/gi";
 import { GiGreenhouse } from "react-icons/gi";
 import { BsCamera2 } from "react-icons/bs";
 import { GiSugarCane } from "react-icons/gi";
+import { ImHeadphones } from "react-icons/im";
 
 function Navbar() {
   return (
@@ -18,7 +19,7 @@ function Navbar() {
         <div className="middle">
           <div>
             <p>
-              <MdAddLocation className="iconMiddle" />
+              <ImHeadphones className="iconMiddle" />
             </p>
             <Link className="nameMiddle"> דיג'יי</Link>
           </div>
@@ -53,10 +54,12 @@ function Navbar() {
             <BsPersonCircle className="IconMenu" />
             <div>
               <Link to="/login">
-                <FiLogIn className="nameMiddle" />
+                <FiLogIn className="nameMiddle" /> הירשם
               </Link>
               <Link to="/Register">
-                <MdSystemUpdateAlt className="nameMiddle" />
+                <MdSystemUpdateAlt className="nameMiddle">
+                  התחבר
+                </MdSystemUpdateAlt>
               </Link>
             </div>
           </div>
