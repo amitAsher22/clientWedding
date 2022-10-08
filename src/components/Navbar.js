@@ -19,18 +19,16 @@ function Navbar() {
         </div>
 
         <div className="right">
-          <BsPersonCircle className="signMenu" />
-          <div className="dropDownMenu">
-            <span>
+          <div className="dropdown">
+            <BsPersonCircle className="IconMenu" />
+            <div>
               <Link to="/login">
                 <FiLogIn /> הירשם
               </Link>
-            </span>
-            <span>
               <Link to="/Register">
                 <MdSystemUpdateAlt /> התחברות
               </Link>
-            </span>
+            </div>
           </div>
         </div>
       </div>

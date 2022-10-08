@@ -1,17 +1,81 @@
 .container {
   display: flex;
   justify-content: space-around;
+  background-color: aqua;
+
+}
+
+/* .right {
+  display: inline-block
 }
 
 
+.IconMenu {
+  font-size: xx-large;
+  width: 120px;
 
 
-.dropDownMenu {
+
+}
+
+.dropdown {
+  z-index: 1;
+  visibility: hidden;
+}
+
+.dropdown a {
   display: none;
+  background: red;
+  width: 100px;
+  transition: .2s;
+
+} */
+
+/* .dropdown:hover div {
+  visibility: visible;
+} */
+
+/* .IconMenu:hover+.dropdown {
+
+  position: absolute;
+  width: 100px;
+
+} */
+
+
+
+/* .BtnAuth {
+  position: relative;
+  cursor: pointer;
+  display: inline-block;
+
+} */
+
+.IconMenu {
+  font-size: xx-large;
+  width: 100px;
+}
+
+.dropdown div a {
+  display: block;
+  padding: 7px;
+  width: 100px;
+}
+
+.dropdown {
+  display: inline-block;
+  cursor: pointer;
 
 }
 
-.signMenu:hover+.dropDownMenu {
-  display: block;
+.dropdown div {
+  position: absolute;
+  z-index: 1;
+  visibility: hidden;
+
+}
+
+.dropdown:hover div {
+  visibility: visible;
 
 }
