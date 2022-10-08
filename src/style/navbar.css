@@ -1,55 +1,13 @@
 .container {
   display: flex;
   justify-content: space-around;
+  align-items: center;
   background-color: aqua;
+  padding: 1rem;
 
 }
 
-/* .right {
-  display: inline-block
-}
 
-
-.IconMenu {
-  font-size: xx-large;
-  width: 120px;
-
-
-
-}
-
-.dropdown {
-  z-index: 1;
-  visibility: hidden;
-}
-
-.dropdown a {
-  display: none;
-  background: red;
-  width: 100px;
-  transition: .2s;
-
-} */
-
-/* .dropdown:hover div {
-  visibility: visible;
-} */
-
-/* .IconMenu:hover+.dropdown {
-
-  position: absolute;
-  width: 100px;
-
-} */
-
-
-
-/* .BtnAuth {
-  position: relative;
-  cursor: pointer;
-  display: inline-block;
-
-} */
 
 .IconMenu {
   font-size: xx-large;
@@ -77,5 +35,30 @@
 
 .dropdown:hover div {
   visibility: visible;
+
+}
+
+.middle {
+  display: flex;
+  justify-content: space-around;
+  width: 50%;
+  text-align: center;
+  text-align: center;
+}
+
+.iconMiddle {
+  font-size: 2rem;
+
+}
+
+.nameMiddle {
+  font-size: 1.2rem;
+
+
+
+  text-decoration: none;
+  color: black;
+  font-family: 'Thine';
+
 
 }

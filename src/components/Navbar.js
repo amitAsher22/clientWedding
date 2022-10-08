@@ -4,6 +4,11 @@ import { Link } from "react-router-dom";
 import { BsPersonCircle } from "react-icons/bs";
 import { FiLogIn } from "react-icons/fi";
 import { MdSystemUpdateAlt } from "react-icons/md";
+import { MdAddLocation } from "react-icons/md";
+import { GiAmpleDress } from "react-icons/gi";
+import { GiGreenhouse } from "react-icons/gi";
+import { BsCamera2 } from "react-icons/bs";
+import { GiSugarCane } from "react-icons/gi";
 
 function Navbar() {
   return (
@@ -11,11 +16,36 @@ function Navbar() {
       <div className="container">
         <Link>logo</Link>
         <div className="middle">
-          <Link>גני אירועים</Link>
-          <Link>אולמות אירועים</Link>
-          <Link>שמלות כלה</Link>
-          <Link>צילום אירועים</Link>
-          <Link> דיג'יי</Link>
+          <div>
+            <p>
+              <MdAddLocation className="iconMiddle" />
+            </p>
+            <Link className="nameMiddle"> דיג'יי</Link>
+          </div>
+          <div>
+            <p>
+              <GiSugarCane className="iconMiddle" />
+            </p>
+            <Link className="nameMiddle">גני אירועים</Link>
+          </div>
+          <div>
+            <p>
+              <GiGreenhouse className="iconMiddle" />
+            </p>
+            <Link className="nameMiddle">אולמות אירועים</Link>
+          </div>
+          <div>
+            <p>
+              <GiAmpleDress className="iconMiddle" />
+            </p>
+            <Link className="nameMiddle">שמלות כלה</Link>
+          </div>
+          <div>
+            <p>
+              <BsCamera2 className="iconMiddle" />
+            </p>
+            <Link className="nameMiddle">צילום אירועים</Link>
+          </div>
         </div>
 
         <div className="right">
@@ -23,10 +53,10 @@ function Navbar() {
             <BsPersonCircle className="IconMenu" />
             <div>
               <Link to="/login">
-                <FiLogIn /> הירשם
+                <FiLogIn className="nameMiddle" />
               </Link>
               <Link to="/Register">
-                <MdSystemUpdateAlt /> התחברות
+                <MdSystemUpdateAlt className="nameMiddle" />
               </Link>
             </div>
           </div>
