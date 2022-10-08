@@ -30,7 +30,7 @@ function Login() {
       const resultData = data.data.result;
       const sucsses = data.data.result.message;
       if (sucsses) {
-        navigate("/home");
+        navigate("/Register");
       } else {
         toast.error("הירשם למערכת , צור חשבון חדש");
       }

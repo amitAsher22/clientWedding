@@ -33,7 +33,7 @@ function Register() {
         if (errrorMsg) {
           toast.error("המשתמש קיים במערכת , עבור להתחבר");
         } else {
-          navigate("/");
+          navigate("/login");
         }
 
         console.log("data after send mongodb", resultBack);
@@ -76,7 +76,7 @@ function Register() {
           הירשם
         </BtnLogin>
         <Hrstyle />
-        <Link to="/">
+        <Link to="/login">
           <LoginUser>עבור להתחבר</LoginUser>
         </Link>
       </SecondDivLogin>
