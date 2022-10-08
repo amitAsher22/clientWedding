@@ -3,13 +3,14 @@ import styled from "styled-components";
 import { Link, useNavigate } from "react-router-dom";
 import "../App.css";
 import axios from "axios";
-///react-toastify
-// import { ToastContainer, toast } from "react-toastify";
-// import "react-toastify/dist/ReactToastify.css";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import { useFormik } from "formik";
 import * as Yup from "yup";
 
 function Register() {
+  const navigate = useNavigate();
+
   const formik = useFormik({
     initialValues: {
       email: "",
@@ -24,12 +25,19 @@ function Register() {
       name: Yup.string().required("Name is Required"),
     }),
     onSubmit: (values) => {
-      axios
-        .post("http://localhost:8000/register/register", values)
-        .then((res) => {
-          const resultBack = res.data;
-          console.log("data after send mongodb", resultBack);
-        });
+      axios.post("http://localhost:8000/register", values).then((res) => {
+        const resultBack = res.data;
+        const errrorMsg = res.data.result.errorMsg;
+        const suscess = res.data.result.Msgsuccessful;
+
+        if (errrorMsg) {
+          toast.error("המשתמש קיים במערכת , עבור להתחבר");
+        } else {
+          navigate("/");
+        }
+
+        console.log("data after send mongodb", resultBack);
+      });
     },
   });
 
@@ -37,7 +45,7 @@ function Register() {
     <LoginDiv>
       <SecondDivLogin>
         <Input
-          placeholder="Email"
+          placeholder="אימל"
           name="email"
           onChange={formik.handleChange}
           value={formik.values.email}
@@ -46,7 +54,7 @@ function Register() {
           <span className="errorMessage">{formik.errors.email}</span>
         ) : null}
         <Input
-          placeholder="Name"
+          placeholder="שם"
           name="name"
           onChange={formik.handleChange}
           value={formik.values.name}
@@ -55,7 +63,7 @@ function Register() {
           <span className="errorMessage">{formik.errors.name}</span>
         ) : null}
         <Input
-          placeholder="Password"
+          placeholder="סיסמא"
           name="password"
           onChange={formik.handleChange}
           value={formik.values.password}
@@ -65,14 +73,14 @@ function Register() {
           <span className="errorMessage">{formik.errors.password}</span>
         ) : null}
         <BtnLogin type="submit" onClick={formik.handleSubmit}>
-          register
+          הירשם
         </BtnLogin>
         <Hrstyle />
         <Link to="/">
-          <LoginUser>Go Login</LoginUser>
+          <LoginUser>עבור להתחבר</LoginUser>
         </Link>
       </SecondDivLogin>
-      {/* <ToastContainer draggable={false} /> */}
+      <ToastContainer />
     </LoginDiv>
   );
 }

@@ -1,18 +1,18 @@
-import React, { useState } from "react";
+import React from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 import "../App.css";
 import axios from "axios";
-// import { ToastContainer, toast } from "react-toastify";
+
 import "react-toastify/dist/ReactToastify.css";
-import { GoogleLogin } from "@react-oauth/google";
-import jwt_decode from "jwt-decode";
 import { useFormik } from "formik";
 import * as Yup from "yup";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import { useNavigate } from "react-router-dom";
 
 function Login() {
-  const [data, setData] = useState({ email: "", password: "" });
-
+  const navigate = useNavigate();
   const formik = useFormik({
     initialValues: {
       email: "",
@@ -24,36 +24,27 @@ function Login() {
         .required("Email is Required"),
       password: Yup.string().required("password is Required"),
     }),
-    onSubmit: (values) => {
-      axios.post("http://localhost:8000/login/login", values).then((res) => {
-        const data = res.data;
-        console.log("after send data to mongodb", data);
-      });
+    onSubmit: async (values) => {
+      const data = await axios.post("http://localhost:8000/login", values);
+
+      const resultData = data.data.result;
+      const sucsses = data.data.result.message;
+      if (sucsses) {
+        navigate("/home");
+      } else {
+        toast.error("הירשם למערכת , צור חשבון חדש");
+      }
+      console.log("data from client", resultData);
     },
   });
 
   return (
     <LoginDiv>
       <SecondDivLogin>
-        <GoogleLogin
-          size="sm"
-          onSuccess={(credentialResponse) => {
-            console.log(credentialResponse.credential);
-            var decoded = jwt_decode(credentialResponse.credential);
-            if (decoded.email_verified) {
-              console.log("verify!!!!");
-            } else {
-              console.log("not verify !!");
-            }
-          }}
-          onError={() => {
-            console.log("Login Failed");
-          }}
-        />
         <TextMiddle>or</TextMiddle>
 
         <Input
-          placeholder="Email"
+          placeholder="איימל"
           name="email"
           type="email"
           value={formik.values.email}
@@ -63,7 +54,7 @@ function Login() {
           <span className="errorMessage">{formik.errors.email}</span>
         ) : null}
         <Input
-          placeholder="Password"
+          placeholder="סיסמא"
           name="password"
           type="password"
           value={formik.values.password}
@@ -73,14 +64,14 @@ function Login() {
           <span className="errorMessage">{formik.errors.password}</span>
         ) : null}
         <BtnLogin type="submit" onClick={formik.handleSubmit}>
-          Log In
+          התחברות
         </BtnLogin>
 
         <Hrstyle />
         <Link to="/register">
-          <CreateAccountBtn>Create new account</CreateAccountBtn>
+          <CreateAccountBtn>צור חשבון חדש</CreateAccountBtn>
         </Link>
-        {/* <ToastContainer /> */}
+        <ToastContainer />
       </SecondDivLogin>
     </LoginDiv>
   );
