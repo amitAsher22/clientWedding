@@ -1,8 +1,8 @@
 .container {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
-  background-color: aqua;
+  /* background-color: aqua; */
   padding: 1rem;
 
 }
@@ -11,18 +11,22 @@
 
 .IconMenu {
   font-size: xx-large;
-  width: 100px;
+  width: 90px;
+  margin-left: 1.7rem;
 }
 
 .dropdown div a {
   display: block;
   padding: 7px;
-  width: 100px;
+  width: 90px;
 }
 
 .dropdown {
   display: inline-block;
   cursor: pointer;
+
+
+
 
 }
 
@@ -35,31 +39,45 @@
 
 .dropdown:hover div {
   visibility: visible;
+  background-color: #e0e0e044;
+  font-family: 'Raanan', 'Asap', Arial, sans-serif;
+
 
 }
 
 .middle {
   display: flex;
-  justify-content: space-around;
-  width: 50%;
+  justify-content: space-between;
+  width: 60%;
   text-align: center;
-  text-align: center;
+  margin-left: 2rem;
+
 }
 
 .iconMiddle {
   font-size: 2rem;
+  color: black;
 
 }
 
 .nameMiddle {
-  font-size: 1.5rem;
-  color: red;
-
-
-
+  font-size: 1.4rem;
   text-decoration: none;
   color: black;
-  font-family: 'Thine';
+  font-family: 'Raanan', 'Asap', Arial, sans-serif;
+  font-size: 100;
+  text-align: center;
 
+}
 
+.mylogo {
+  width: 20%;
+  text-align: center;
+}
+
+.logoDiv {
+  text-align: center;
+  padding: 0;
+  margin: 0;
+  width: 20%;
 }

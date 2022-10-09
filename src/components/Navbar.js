@@ -2,50 +2,70 @@ import React from "react";
 import "../style/navbar.css";
 import { Link } from "react-router-dom";
 import { BsPersonCircle } from "react-icons/bs";
-import { FiLogIn } from "react-icons/fi";
-import { MdSystemUpdateAlt } from "react-icons/md";
-import { MdAddLocation } from "react-icons/md";
 import { GiAmpleDress } from "react-icons/gi";
 import { GiGreenhouse } from "react-icons/gi";
 import { BsCamera2 } from "react-icons/bs";
 import { GiSugarCane } from "react-icons/gi";
-import { ImHeadphones } from "react-icons/im";
+import { IoMdMusicalNotes } from "react-icons/io";
+import img from "../imges/myday.png";
 
 function Navbar() {
   return (
     <div>
       <div className="container">
-        <Link>logo</Link>
+        <div className="logoDiv">
+          <img src={img} alt="my logo" className="mylogo" />
+        </div>
         <div className="middle">
           <div>
             <p>
-              <ImHeadphones className="iconMiddle" />
+              <Link to="/Dj">
+                <IoMdMusicalNotes className="iconMiddle" />
+              </Link>
             </p>
-            <Link className="nameMiddle"> דיג'יי</Link>
+            <Link to="/Dj" className="nameMiddle">
+              דיג'יי
+            </Link>
           </div>
           <div>
             <p>
-              <GiSugarCane className="iconMiddle" />
+              <Link to="/Gardens">
+                <GiSugarCane className="iconMiddle" />
+              </Link>
             </p>
-            <Link className="nameMiddle">גני אירועים</Link>
+            <Link to="/Gardens" className="nameMiddle">
+              גני אירועים
+            </Link>
           </div>
           <div>
             <p>
-              <GiGreenhouse className="iconMiddle" />
+              <Link to="/halls">
+                <GiGreenhouse className="iconMiddle" />
+              </Link>
             </p>
-            <Link className="nameMiddle">אולמות אירועים</Link>
+            <Link to="/halls" className="nameMiddle">
+              אולמות אירועים
+            </Link>
           </div>
           <div>
             <p>
-              <GiAmpleDress className="iconMiddle" />
+              <Link to="/dresses">
+                <GiAmpleDress className="iconMiddle" />
+              </Link>
             </p>
-            <Link className="nameMiddle">שמלות כלה</Link>
+            <Link to="/dresses" className="nameMiddle">
+              שמלות כלה
+            </Link>
           </div>
           <div>
             <p>
-              <BsCamera2 className="iconMiddle" />
+              <Link to="/EventsPhoto">
+                <BsCamera2 className="iconMiddle" />
+              </Link>
             </p>
-            <Link className="nameMiddle">צילום אירועים</Link>
+            <Link to="/EventsPhoto" className="nameMiddle">
+              צילום אירועים
+            </Link>
           </div>
         </div>
 
@@ -53,13 +73,11 @@ function Navbar() {
           <div className="dropdown">
             <BsPersonCircle className="IconMenu" />
             <div>
-              <Link to="/login">
-                <FiLogIn className="nameMiddle" /> הירשם
+              <Link to="/Register" className="nameMiddle">
+                התחבר
               </Link>
-              <Link to="/Register">
-                <MdSystemUpdateAlt className="nameMiddle">
-                  התחבר
-                </MdSystemUpdateAlt>
+              <Link to="/login" className="nameMiddle">
+                הירשם
               </Link>
             </div>
           </div>
