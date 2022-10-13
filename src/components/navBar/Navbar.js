@@ -95,6 +95,7 @@ const DropDownMenu = styled.div`
   padding: 2rem 0.5rem;
   text-align: right;
   width: 90%;
+  font-size: 90%;
 `;
 
 const SubDivNavBar = styled.div`
@@ -114,6 +115,8 @@ const SubDivNavBar = styled.div`
 
 const NameCategoryNavBar = styled.span`
   text-align: center;
-  font-size: 1.5rem;
-  font-weight: 200px;
+  font-size: 24px;
+  font-weight: 300px;
+  color: #3055b2;
+  font-family: "Raanan-Light";
 `;
