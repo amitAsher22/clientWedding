@@ -91,23 +91,23 @@ const ContainerNavBar = styled.div`
 const DropDownMenu = styled.div`
   position: absolute;
   display: none;
-
   background-color: #f1f1f1;
-  padding: 2rem;
-  z-index: 1;
+  padding: 2rem 0.5rem;
+  text-align: right;
+  width: 90%;
 `;
 
 const SubDivNavBar = styled.div`
   position: relative;
-  display: inline-block;
-  width: 15%;
+
+  width: 8%;
   text-align: center;
   border-left: 1px solid black;
   font-family: "heebo";
   &:hover {
-    display: block;
-    > div {
+    div {
       display: block;
+      cursor: pointer;
     }
   }
 `;
