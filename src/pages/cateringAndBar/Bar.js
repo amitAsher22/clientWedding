@@ -1,11 +1,11 @@
 import React from "react";
 
-function Dj() {
+function Bar() {
   return (
     <div>
-      <h1>dj</h1>
+      <p>Bar</p>
     </div>
   );
 }
 
-export default Dj;
+export default Bar;

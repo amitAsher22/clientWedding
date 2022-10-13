@@ -28,7 +28,6 @@ function Register() {
       axios.post("http://localhost:8000/register", values).then((res) => {
         const resultBack = res.data;
         const errrorMsg = res.data.result.errorMsg;
-        const suscess = res.data.result.Msgsuccessful;
 
         if (errrorMsg) {
           toast.error("המשתמש קיים במערכת , עבור להתחבר");

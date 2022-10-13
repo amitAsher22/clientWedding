@@ -1,11 +1,11 @@
 import React from "react";
 
-function Gardens() {
+function Video() {
   return (
     <div>
-      <h1>Gardens</h1>
+      <p>video</p>
     </div>
   );
 }
 
-export default Gardens;
+export default Video;
