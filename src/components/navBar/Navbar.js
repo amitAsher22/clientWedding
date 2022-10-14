@@ -2,6 +2,9 @@ import React from "react";
 // style components
 import styled from "styled-components";
 
+/// react-dom
+import { Link } from "react-router-dom";
+
 /// pages > components
 import EventsGardens from "../../pages/celebratePlace/EventsGardens";
 import EventHall from "../../pages/celebratePlace/EventHall";
@@ -28,48 +31,82 @@ function Navbar() {
         <SubDivNavBar>
           <NameCategoryNavBar>מקום לחגוג</NameCategoryNavBar>
           <DropDownMenu>
-            <EventsGardens />
-            <EventHall />
-            <BusinessEvents />
+            <Link to="/EventsGardens">
+              <EventsGardens />
+            </Link>
+            <Link to="/EventHall">
+              <EventHall />
+            </Link>
+            <Link to="/BusinessEvents">
+              <BusinessEvents />
+            </Link>
           </DropDownMenu>
         </SubDivNavBar>
         <SubDivNavBar>
           <NameCategoryNavBar>לכלה ולחתן</NameCategoryNavBar>
           <DropDownMenu>
-            <WeddingDress />
-            <EveningDress />
-            <GroomSuit />
+            <Link to="/WeddingDress">
+              <WeddingDress />
+            </Link>
+            <Link to="/EveningDress">
+              <EveningDress />
+            </Link>
+            <Link to="/GroomSuit">
+              <GroomSuit />
+            </Link>
           </DropDownMenu>
         </SubDivNavBar>
         <SubDivNavBar>
           <NameCategoryNavBar>צילום</NameCategoryNavBar>
           <DropDownMenu>
-            <EventsPhotography />
-            <Stills />
-            <Video />
+            <Link to="/EventsPhotography">
+              <EventsPhotography />
+            </Link>
+            <Link to="/Stills">
+              <Stills />
+            </Link>
+            <Link to="/Video">
+              <Video />
+            </Link>
           </DropDownMenu>
         </SubDivNavBar>
         <SubDivNavBar>
           <NameCategoryNavBar>מוזיקה</NameCategoryNavBar>
           <DropDownMenu>
-            <Dj />
-            <RecordingStudio />
-            <ReceptionBands />
+            <Link to="/Dj">
+              <Dj />
+            </Link>
+            <Link to="/RecordingStudio">
+              <RecordingStudio />
+            </Link>
+            <Link to="/ReceptionBands">
+              <ReceptionBands />
+            </Link>
           </DropDownMenu>
         </SubDivNavBar>
         <SubDivNavBar>
           <NameCategoryNavBar>קייטרינג ובר</NameCategoryNavBar>
           <DropDownMenu>
-            <Catering />
-            <SweetsBar />
-            <Bar />
+            <Link to="/Catering">
+              <Catering />
+            </Link>
+            <Link to="/SweetsBar">
+              <SweetsBar />
+            </Link>
+            <Link to="/Bar">
+              <Bar />
+            </Link>
           </DropDownMenu>
         </SubDivNavBar>
         <SubDivNavBar>
           <NameCategoryNavBar>מבצעים</NameCategoryNavBar>
           <DropDownMenu>
-            <WeddingDeals />
-            <EventsGardensHall />
+            <Link to="/WeddingDeals">
+              <WeddingDeals />
+            </Link>
+            <Link to="/EventsGardensHall">
+              <EventsGardensHall />
+            </Link>
           </DropDownMenu>
         </SubDivNavBar>
       </ContainerNavBar>
