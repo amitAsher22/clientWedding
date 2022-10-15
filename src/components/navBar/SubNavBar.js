@@ -14,7 +14,7 @@ import weddinglogo from "../../imges/weddinglogo.png";
 /// Avatar-react
 import Avatar from "react-avatar";
 
-/// react-dom
+/// react-router
 import { Link } from "react-router-dom";
 
 function SubNavBar() {
@@ -29,6 +29,10 @@ function SubNavBar() {
       <DivRightSide>
         <DivIcons>
           <BsPersonSquare size="2rem" color="white" />
+          <MenuDropDown>
+            <p>registerion</p>
+            <p>login</p>
+          </MenuDropDown>
         </DivIcons>
 
         <DivIconsSearch>
@@ -38,7 +42,7 @@ function SubNavBar() {
       </DivRightSide>
       <DivLeftSide>
         <DivAvatarImg>
-          <Link to="/">
+          <Link to="/LikesPage">
             <Avatar round={true} src={weddinglogo} alt="mylogo" size="100%" />
           </Link>
           <Link to="/">
@@ -93,9 +97,23 @@ const DivIconsSearch = styled.div`
 `;
 
 const DivIcons = styled.div`
+  position: relative;
+
   &:hover {
     cursor: pointer;
+    div {
+      background: #5c6676;
+      color: white;
+      display: block;
+      padding: 1rem;
+      left: -3rem;
+    }
   }
+`;
+
+const MenuDropDown = styled.div`
+  position: absolute;
+  display: none;
 `;
 
 const InputSearch = styled.input`

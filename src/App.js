@@ -22,6 +22,7 @@ import Catering from "./pages/cateringAndBar/Catering";
 import SweetsBar from "./pages/cateringAndBar/SweetsBar";
 import EventsGardensHall from "./pages/Deals/EventsGardensHall";
 import WeddingDeals from "./pages/Deals/WeddingDeals";
+import LiksPage from "./pages/Likes/LikesPage";
 
 function App() {
   return (
@@ -49,6 +50,7 @@ function App() {
           <Route path="/SweetsBar" element={<SweetsBar />} />
           <Route path="/EventsGardensHall" element={<EventsGardensHall />} />
           <Route path="/WeddingDeals" element={<WeddingDeals />} />
+          <Route path="/LikesPage" element={<LiksPage />} />
         </Routes>
       </div>
     </>
