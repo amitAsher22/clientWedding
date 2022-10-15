@@ -119,41 +119,53 @@ export default Navbar;
 const ContainerNavBar = styled.div`
   display: flex;
   flex-direction: row;
-  justify-content: center;
   background-color: rgb(247, 247, 247);
-  padding: 1rem 0;
   text-aline: center;
+  justify-content: center;
+  padding: 0.5rem 0px;
 `;
 
 const DropDownMenu = styled.div`
   position: absolute;
   display: none;
-  background-color: #f1f1f1;
-  padding: 2rem 0.5rem;
-  text-align: right;
-  width: 90%;
-  font-size: 90%;
+  background-color: white;
+  padding: 1rem 0px;
+  max-width: 100%;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 `;
 
 const SubDivNavBar = styled.div`
   position: relative;
-
-  width: 8%;
   text-align: center;
-  border-left: 1px solid black;
   font-family: "heebo";
+  max-width: 100%;
+  padding: 0px 2rem;
+  border-left: 1px solid black;
   &:hover {
+    max-width: 100%;
+
     div {
       display: block;
       cursor: pointer;
+      max-width: 100%;
+      display: flex;
+      flex-direction: column;
+      margin: 0px 1rem;
+      text-align: right;
     }
   }
 `;
 
 const NameCategoryNavBar = styled.span`
-  text-align: center;
+  text-align: right;
   font-size: 24px;
-  font-weight: 300px;
-  color: #3055b2;
+  font-weight: 200px;
+  color: #373c49;
+  width: 100%;
+  margin: 0px 2rem;
   font-family: "Raanan-Light";
+  :hover {
+    color: #f9c8cc;
+    cursor: context-menu;
+  }
 `;

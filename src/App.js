@@ -4,6 +4,7 @@ import { Route, Routes } from "react-router-dom";
 
 /// components
 import Home from "./pages/HomePage/Home";
+import SubNavBar from "./components/navBar/SubNavBar";
 import EventsGardens from "./pages/celebratePlace/EventsGardens";
 import EventHall from "./pages/celebratePlace/EventHall";
 import BusinessEvents from "./pages/celebratePlace/BusinessEvents";
@@ -25,6 +26,7 @@ import WeddingDeals from "./pages/Deals/WeddingDeals";
 function App() {
   return (
     <>
+      <SubNavBar />
       <NavBar />
       <div>
         <Routes>
