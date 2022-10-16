@@ -67,6 +67,9 @@ const MainSubNavBar = styled.div`
   padding: 0.2rem 2rem;
   margin-bottom: 1rem;
   margin-top: 1rem;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
 `;
 
 const DivRightSide = styled.div`

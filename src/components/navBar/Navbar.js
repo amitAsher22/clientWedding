@@ -123,6 +123,9 @@ const ContainerNavBar = styled.div`
   text-aline: center;
   justify-content: center;
   padding: 0.5rem 0px;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 3rem;
 `;
 
 const DropDownMenu = styled.div`

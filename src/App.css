@@ -18,3 +18,8 @@ html {
 .errorMessage {
   color: red;
 }
+
+a {
+  text-decoration: none;
+  color: #66737c;
+}
