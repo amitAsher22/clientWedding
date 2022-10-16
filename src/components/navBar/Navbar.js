@@ -126,6 +126,7 @@ const ContainerNavBar = styled.div`
   position: -webkit-sticky;
   position: sticky;
   top: 3rem;
+  z-index: 1;
 `;
 
 const DropDownMenu = styled.div`

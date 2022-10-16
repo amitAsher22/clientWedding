@@ -70,6 +70,7 @@ const MainSubNavBar = styled.div`
   position: -webkit-sticky;
   position: sticky;
   top: 0;
+  z-index: 999;
 `;
 
 const DivRightSide = styled.div`
@@ -117,6 +118,7 @@ const DivIcons = styled.div`
 const MenuDropDown = styled.div`
   position: absolute;
   display: none;
+  z-index: 1;
 `;
 
 const InputSearch = styled.input`
