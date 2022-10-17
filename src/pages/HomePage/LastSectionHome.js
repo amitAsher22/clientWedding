@@ -3,19 +3,23 @@ import React from "react";
 // style components
 import styled from "styled-components";
 
+/// imges > arya.png
+import img from "../../imges/arya.png";
+
 function LastSectionHome() {
   return (
     <MainDiv>
       <SubMain>
         <SectionOne>
-          <h1>הספקים שחיפשתם נמצאים ממש כאן</h1>
-          <p>נכון שיש לנו הכי הרבה ספקים, אבל יותר חשוב -</p>
-          <p>יש לנו אפשרויות חיפוש נוחות ומדויקות במיוחד</p>
-          <p>שיעזרו לכם למצוא את הספק המושלם לכל תחום,</p>
-          <p>לכל סגנון ובכל תקציב</p>
+          <TitleSectionOne>הספקים שחיפשתם נמצאים ממש כאן</TitleSectionOne>
+          <Paragraph>נכון שיש לנו הכי הרבה ספקים, אבל יותר חשוב -</Paragraph>
+          <Paragraph>יש לנו אפשרויות חיפוש נוחות ומדויקות במיוחד</Paragraph>
+          <Paragraph>שיעזרו לכם למצוא את הספק המושלם לכל תחום,</Paragraph>
+          <Paragraph>לכל סגנון ובכל תקציב</Paragraph>
         </SectionOne>
         <SectionTwo>
-          <p>אריא</p>
+          <Title>אריא</Title>
+          <img src={img} alt="arya" />
         </SectionTwo>
       </SubMain>
     </MainDiv>
@@ -26,9 +30,12 @@ export default LastSectionHome;
 
 const MainDiv = styled.div`
   background: #fff4f4;
-  width: 80%;
+  width: 70%;
   margin: auto;
-  padding: 10rem;
+  padding: 4rem;
+  -webkit-box-shadow: 0 15px 10px #777;
+  -moz-box-shadow: 0 15px 10px #777;
+  margin-bottom: 20%;
 `;
 
 const SubMain = styled.div`
@@ -37,10 +44,34 @@ const SubMain = styled.div`
   align-items: flex-end;
 `;
 
-const SectionOne = styled.div``;
+const SectionOne = styled.div`
+  font-size: 1.5rem;
+  text-align: right;
+  padding: 2rem;
+`;
 
 const SectionTwo = styled.div`
   background: white;
   width: 50%;
-  height: 30rem;
+  height: 15rem;
+  position: relative;
+  right: -20rem;
+  text-align: center;
+`;
+
+const Title = styled.p`
+  text-align: right;
+  font-size: 2rem;
+  font-family: "RaananLight,Asap";
+  letter-spacing: 0.5rem;
+`;
+
+const TitleSectionOne = styled.span`
+  font-weight: 100px;
+  font-size: 5rem;
+  letter-spacing: normal;
+`;
+
+const Paragraph = styled.p`
+  letter-spacing: 0.1rem; ; ;
 `;

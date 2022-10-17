@@ -23,6 +23,8 @@ import SweetsBar from "../../pages/cateringAndBar/SweetsBar";
 import Bar from "../../pages/cateringAndBar/Bar";
 import WeddingDeals from "../../pages/Deals/WeddingDeals";
 import EventsGardensHall from "../../pages/Deals/EventsGardensHall";
+import Kamakesef from "../../pages/UsefulTools/Kamakesef";
+import QandA from "../../pages/UsefulTools/QandA";
 
 function Navbar() {
   return (
@@ -109,6 +111,17 @@ function Navbar() {
             </Link>
           </DropDownMenu>
         </SubDivNavBar>
+        <SubDivNavBar>
+          <NameCategoryNavBar>כלים שימושיים</NameCategoryNavBar>
+          <DropDownMenu>
+            <Link to="/Kamakesef">
+              <Kamakesef />
+            </Link>
+            <Link to="/QandA">
+              <QandA />
+            </Link>
+          </DropDownMenu>
+        </SubDivNavBar>
       </ContainerNavBar>
     </>
   );
@@ -154,7 +167,7 @@ const SubDivNavBar = styled.div`
       max-width: 100%;
       display: flex;
       flex-direction: column;
-      margin: 0px 1rem;
+      margin: 0px 0.5rem;
       text-align: right;
     }
   }
@@ -166,7 +179,7 @@ const NameCategoryNavBar = styled.span`
   font-weight: 200px;
   color: #373c49;
   width: 100%;
-  margin: 0px 2rem;
+  margin: 0px 1rem;
   font-family: "Raanan-Light";
   :hover {
     color: #f9c8cc;

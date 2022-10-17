@@ -2,6 +2,7 @@ import React from "react";
 
 /// components
 import LastSectionHome from "./LastSectionHome";
+import SectionTree from "./SectionTree";
 
 // style components
 import styled from "styled-components";
@@ -97,6 +98,7 @@ function Home() {
         </GridDivCards>
       </Container>
       <LastSectionHome />
+      <SectionTree />
     </>
   );
 }
@@ -112,7 +114,7 @@ const MainDiv = styled.div`
   padding: 3rem;
   color: #373c49;
 
-  width: 70%;
+  width: 80%;
   margin: auto;
   margin-top: 10rem;
 `;
