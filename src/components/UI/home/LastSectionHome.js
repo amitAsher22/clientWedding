@@ -4,12 +4,15 @@ import React from "react";
 import styled from "styled-components";
 
 /// from file images > {all images}
-import img1 from "../../imges/imgOne.jpeg";
-import img2 from "../../imges/imgTwo.jpeg";
-import img3 from "../../imges/man.jpeg";
-import img4 from "../../imges/photo.jpeg";
+import img1 from "../../../imges/imgOne.jpeg";
+import img2 from "../../../imges/imgTwo.jpeg";
+import img3 from "../../../imges/man.jpeg";
+import img4 from "../../../imges/photo.jpeg";
 
-function SectionTree() {
+/// components style
+import LinkImg from "../home/LinkImg";
+
+function LastSectionHome() {
   return (
     <SectionDiv>
       <Right>
@@ -22,20 +25,20 @@ function SectionTree() {
       </Right>
       <Left>
         <DivImg>
-          <Image src={img1} alt="img1" />
-          <Image src={img2} alt="img2" />
-          <Image src={img3} alt="img3" />
-          <Image src={img4} alt="img4" />
+          <LinkImg img={img1} page="EventsGardens" />
+          <LinkImg img={img2} page="Stills" />
+          <LinkImg img={img3} page="Catering" />
+          <LinkImg img={img4} page="Bar" />
         </DivImg>
       </Left>
     </SectionDiv>
   );
 }
 
-export default SectionTree;
+export default LastSectionHome;
 
 const SectionDiv = styled.div`
-  width: 60%;
+  width: 80%;
   background: red;
   margin: auto;
   margin-top: 2rem;
@@ -44,28 +47,33 @@ const SectionDiv = styled.div`
 `;
 
 const Left = styled.div`
-  background: red;
+  height: 100vh;
   width: 50%;
+  padding: 3rem;
 `;
 
 const Right = styled.div`
-  background: blue;
   width: 50%;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+  align-self: center;
 `;
 
-const TiTleRight = styled.h1``;
-const Paragraph = styled.p``;
+const TiTleRight = styled.span`
+  font-size: 5rem;
+  letter-spacing: normal;
+  color: #373c49;
+`;
+const Paragraph = styled.span`
+  font-size: 2rem;
+`;
 
 const DivImg = styled.div`
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-
-  grid-gap: 1rem;
-`;
-
-const Image = styled.img`
-  width: 300px;
+  grid-template-columns: 1fr 1fr;
   height: 100%;
-  object-fit: cover;
-  object-position: center;
+  width: 100%;
+  gap: 2rem;
 `;

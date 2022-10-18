@@ -4,9 +4,9 @@ import React from "react";
 import styled from "styled-components";
 
 /// imges > arya.png
-import img from "../../imges/arya.png";
+import img from "../../../imges/arya.png";
 
-function LastSectionHome() {
+function MiddleSectionHome() {
   return (
     <MainDiv>
       <SubMain>
@@ -26,7 +26,7 @@ function LastSectionHome() {
   );
 }
 
-export default LastSectionHome;
+export default MiddleSectionHome;
 
 const MainDiv = styled.div`
   background: #fff4f4;
@@ -64,12 +64,14 @@ const Title = styled.p`
   font-size: 2rem;
   font-family: "RaananLight,Asap";
   letter-spacing: 0.5rem;
+  color: #373c49;
 `;
 
 const TitleSectionOne = styled.span`
   font-weight: 100px;
   font-size: 5rem;
   letter-spacing: normal;
+  color: #373c49;
 `;
 
 const Paragraph = styled.p`

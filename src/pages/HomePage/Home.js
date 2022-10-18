@@ -1,8 +1,8 @@
 import React from "react";
 
 /// components
-import LastSectionHome from "./LastSectionHome";
-import SectionTree from "./SectionTree";
+import MiddleSectionHome from "../../components/UI/home/MiddleSectionHome";
+import LastSectionHome from "../../components/UI/home/LastSectionHome";
 
 // style components
 import styled from "styled-components";
@@ -97,8 +97,8 @@ function Home() {
           </Link>
         </GridDivCards>
       </Container>
+      <MiddleSectionHome />
       <LastSectionHome />
-      <SectionTree />
     </>
   );
 }
@@ -107,6 +107,7 @@ export default Home;
 
 const Container = styled.div`
   margin-bottom: 10rem;
+  height: 100%;
 `;
 
 const MainDiv = styled.div`
