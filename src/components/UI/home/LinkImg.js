@@ -16,4 +16,8 @@ const StyledLink = styled(Link)`
   background-repeat: no-repeat;
   width: 100%;
   height: 100%;
+  box-shadow: 10px 10px 5px #ccc;
+  -moz-box-shadow: 10px 10px 5px #ccc;
+  -webkit-box-shadow: 10px 10px 5px #ccc;
+  -khtml-box-shadow: 10px 10px 5px #ccc;
 `;
