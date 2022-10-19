@@ -8,6 +8,7 @@ import { Link } from "react-router-dom";
 import { cards } from "../../../pages/HomePage/DataCards/data";
 
 function TopSectionHome() {
+  console.log(cards, "dataCards");
   return (
     <>
       <Container>
@@ -19,9 +20,9 @@ function TopSectionHome() {
         </MainDiv>
         <GridDivCards>
           {cards.map((card) => (
-            <Link to={`/${card.link}`}>
+            <Link to={`/${card.link}`} key={card.title}>
               <SubGrid>
-                <div>{card.icon}</div>
+                <div>{card.icon()}</div>
                 <div>{card.title}</div>
               </SubGrid>
             </Link>
@@ -40,12 +41,12 @@ const Container = styled.div`
 
 const MainDiv = styled.div`
   text-align: center;
-  padding: 3rem;
+  padding: 5rem;
   color: #373c49;
 
   width: 80%;
   margin: auto;
-  margin-top: 10rem;
+  margin-top: 4rem;
 `;
 
 const TitleOne = styled.span`
@@ -71,12 +72,12 @@ const GridDivCards = styled.div`
 `;
 
 const SubGrid = styled.div`
-  border-left: 1px solid rgba(0, 0, 0, 0.8);
-  border-bottom: 1px solid rgba(0, 0, 0, 0.8);
-  padding: 2rem;
+  border: 0.1rem solid rgb(216, 216, 216);
+
+  padding: 3rem;
   font-size: 30px;
   text-align: center;
-  height: 200px;
+  margin: auto;
 
   &:hover {
     cursor: pointer;
