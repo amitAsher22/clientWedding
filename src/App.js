@@ -23,6 +23,10 @@ import SweetsBar from "./pages/cateringAndBar/SweetsBar";
 import EventsGardensHall from "./pages/Deals/EventsGardensHall";
 import WeddingDeals from "./pages/Deals/WeddingDeals";
 import LiksPage from "./pages/Likes/LikesPage";
+import Kamakesef from "./pages/UsefulTools/Kamakesef";
+import QandA from "./pages/UsefulTools/QandA";
+
+import CardsFilter from "./components/cardsFilter/CardsFilter";
 
 function App() {
   return (
@@ -32,25 +36,29 @@ function App() {
       <div>
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/EventsGardens" element={<EventsGardens />} />
-          <Route path="/EventHall" element={<EventHall />} />
-          <Route path="/EventHall" element={<EventHall />} />
-          <Route path="/BusinessEvents" element={<BusinessEvents />} />
-          <Route path="/EveningDress" element={<EveningDress />} />
-          <Route path="/GroomSuit" element={<GroomSuit />} />
-          <Route path="/WeddingDress" element={<WeddingDress />} />
-          <Route path="/EventsPhotography" element={<EventsPhotography />} />
-          <Route path="/Stills" element={<Stills />} />
-          <Route path="/Video" element={<Video />} />
-          <Route path="/Dj" element={<Dj />} />
-          <Route path="/ReceptionBands" element={<ReceptionBands />} />
-          <Route path="/RecordingStudio" element={<RecordingStudio />} />
-          <Route path="/Bar" element={<Bar />} />
-          <Route path="/Catering" element={<Catering />} />
-          <Route path="/SweetsBar" element={<SweetsBar />} />
-          <Route path="/EventsGardensHall" element={<EventsGardensHall />} />
-          <Route path="/WeddingDeals" element={<WeddingDeals />} />
-          <Route path="/LikesPage" element={<LiksPage />} />
+          <Route path="/navbar" element={<CardsFilter />}>
+            <Route path="EventsGardens" element={<EventsGardens />} />
+            <Route path="EventHall" element={<EventHall />} />
+            <Route path="EventHall" element={<EventHall />} />
+            <Route path="BusinessEvents" element={<BusinessEvents />} />
+            <Route path="EveningDress" element={<EveningDress />} />
+            <Route path="GroomSuit" element={<GroomSuit />} />
+            <Route path="WeddingDress" element={<WeddingDress />} />
+            <Route path="EventsPhotography" element={<EventsPhotography />} />
+            <Route path="Stills" element={<Stills />} />
+            <Route path="Video" element={<Video />} />
+            <Route path="Dj" element={<Dj />} />
+            <Route path="ReceptionBands" element={<ReceptionBands />} />
+            <Route path="RecordingStudio" element={<RecordingStudio />} />
+            <Route path="Bar" element={<Bar />} />
+            <Route path="Catering" element={<Catering />} />
+            <Route path="SweetsBar" element={<SweetsBar />} />
+            <Route path="EventsGardensHall" element={<EventsGardensHall />} />
+            <Route path="WeddingDeals" element={<WeddingDeals />} />
+            <Route path="Kamakesef" element={<Kamakesef />} />
+            <Route path="QandA" element={<QandA />} />
+          </Route>
+          <Route path="LikesPage" element={<LiksPage />} />
         </Routes>
       </div>
     </>

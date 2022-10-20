@@ -33,13 +33,13 @@ function Navbar() {
         <SubDivNavBar>
           <NameCategoryNavBar>מקום לחגוג</NameCategoryNavBar>
           <DropDownMenu>
-            <Link to="/EventsGardens">
+            <Link to="/navbar/EventsGardens">
               <EventsGardens />
             </Link>
-            <Link to="/EventHall">
+            <Link to="/navbar/EventHall">
               <EventHall />
             </Link>
-            <Link to="/BusinessEvents">
+            <Link to="/navbar/BusinessEvents">
               <BusinessEvents />
             </Link>
           </DropDownMenu>
@@ -47,13 +47,13 @@ function Navbar() {
         <SubDivNavBar>
           <NameCategoryNavBar>לכלה ולחתן</NameCategoryNavBar>
           <DropDownMenu>
-            <Link to="/WeddingDress">
+            <Link to="/navbar/WeddingDress">
               <WeddingDress />
             </Link>
-            <Link to="/EveningDress">
+            <Link to="/navbar/EveningDress">
               <EveningDress />
             </Link>
-            <Link to="/GroomSuit">
+            <Link to="/navbar/GroomSuit">
               <GroomSuit />
             </Link>
           </DropDownMenu>
@@ -61,13 +61,13 @@ function Navbar() {
         <SubDivNavBar>
           <NameCategoryNavBar>צילום</NameCategoryNavBar>
           <DropDownMenu>
-            <Link to="/EventsPhotography">
+            <Link to="/navbar/EventsPhotography">
               <EventsPhotography />
             </Link>
-            <Link to="/Stills">
+            <Link to="/navbar/Stills">
               <Stills />
             </Link>
-            <Link to="/Video">
+            <Link to="/navbar/Video">
               <Video />
             </Link>
           </DropDownMenu>
@@ -75,13 +75,13 @@ function Navbar() {
         <SubDivNavBar>
           <NameCategoryNavBar>מוזיקה</NameCategoryNavBar>
           <DropDownMenu>
-            <Link to="/Dj">
+            <Link to="/navbar/Dj">
               <Dj />
             </Link>
-            <Link to="/RecordingStudio">
+            <Link to="/navbar/RecordingStudio">
               <RecordingStudio />
             </Link>
-            <Link to="/ReceptionBands">
+            <Link to="/navbar/ReceptionBands">
               <ReceptionBands />
             </Link>
           </DropDownMenu>
@@ -89,13 +89,13 @@ function Navbar() {
         <SubDivNavBar>
           <NameCategoryNavBar>קייטרינג ובר</NameCategoryNavBar>
           <DropDownMenu>
-            <Link to="/Catering">
+            <Link to="/navbar/Catering">
               <Catering />
             </Link>
-            <Link to="/SweetsBar">
+            <Link to="/navbar/SweetsBar">
               <SweetsBar />
             </Link>
-            <Link to="/Bar">
+            <Link to="/navbar/Bar">
               <Bar />
             </Link>
           </DropDownMenu>
@@ -103,10 +103,10 @@ function Navbar() {
         <SubDivNavBar>
           <NameCategoryNavBar>מבצעים</NameCategoryNavBar>
           <DropDownMenu>
-            <Link to="/WeddingDeals">
+            <Link to="/navbar/WeddingDeals">
               <WeddingDeals />
             </Link>
-            <Link to="/EventsGardensHall">
+            <Link to="/navbar/EventsGardensHall">
               <EventsGardensHall />
             </Link>
           </DropDownMenu>
@@ -114,10 +114,10 @@ function Navbar() {
         <SubDivNavBar>
           <NameCategoryNavBar>כלים שימושיים</NameCategoryNavBar>
           <DropDownMenu>
-            <Link to="/Kamakesef">
+            <Link to="/navbar/Kamakesef">
               <Kamakesef />
             </Link>
-            <Link to="/QandA">
+            <Link to="/navbar/QandA">
               <QandA />
             </Link>
           </DropDownMenu>
