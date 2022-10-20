@@ -5,7 +5,7 @@ import styled from "styled-components";
 import { Link } from "react-router-dom";
 
 const LinkImg = ({ img, page }) => {
-  return <StyledLink img={img} to={`/${page}`} />;
+  return <StyledLink img={img} to={`/navbar/${page}`} />;
 };
 
 export default LinkImg;

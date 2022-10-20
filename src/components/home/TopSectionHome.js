@@ -5,10 +5,10 @@ import styled from "styled-components";
 /// react-dom
 import { Link } from "react-router-dom";
 
-import { cards } from "../../../pages/HomePage/DataCards/data";
+/// data
+import { information } from "../../data/globalData";
 
 function TopSectionHome() {
-  console.log(cards, "dataCards");
   return (
     <>
       <Container>
@@ -19,8 +19,8 @@ function TopSectionHome() {
           </TitleTwo>
         </MainDiv>
         <GridDivCards>
-          {cards.map((card) => (
-            <Link to={`/${card.link}`} key={card.title}>
+          {information.components[0].TopSectionHome.map((card) => (
+            <Link to={`/navbar/${card.link}`} key={card.title}>
               <SubGrid>
                 <div>{card.icon()}</div>
                 <div>{card.title}</div>

@@ -4,10 +4,10 @@ import React from "react";
 import styled from "styled-components";
 
 /// from file images > {all images}
-import img1 from "../../../imges/imgOne.jpeg";
-import img2 from "../../../imges/imgTwo.jpeg";
-import img3 from "../../../imges/man.jpeg";
-import img4 from "../../../imges/photo.jpeg";
+import img1 from "../../imges/imgOne.jpeg";
+import img2 from "../../imges/imgTwo.jpeg";
+import img3 from "../../imges/man.jpeg";
+import img4 from "../../imges/photo.jpeg";
 
 /// components style
 import LinkImg from "../home/LinkImg";

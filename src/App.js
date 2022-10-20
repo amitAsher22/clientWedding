@@ -28,7 +28,11 @@ import QandA from "./pages/UsefulTools/QandA";
 
 import CardsFilter from "./components/cardsFilter/CardsFilter";
 
+/// data
+import { information } from ".././src/data/globalData.js";
+
 function App() {
+  console.log(information);
   return (
     <>
       <SubNavBar />
@@ -36,6 +40,7 @@ function App() {
       <div>
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="LikesPage" element={<LiksPage />} />
           <Route path="/navbar" element={<CardsFilter />}>
             <Route path="EventsGardens" element={<EventsGardens />} />
             <Route path="EventHall" element={<EventHall />} />
@@ -58,7 +63,6 @@ function App() {
             <Route path="Kamakesef" element={<Kamakesef />} />
             <Route path="QandA" element={<QandA />} />
           </Route>
-          <Route path="LikesPage" element={<LiksPage />} />
         </Routes>
       </div>
     </>

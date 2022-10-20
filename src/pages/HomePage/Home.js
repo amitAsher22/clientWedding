@@ -1,9 +1,9 @@
 import React from "react";
 
 /// components
-import MiddleSectionHome from "../../components/UI/home/MiddleSectionHome";
-import LastSectionHome from "../../components/UI/home/LastSectionHome";
-import TopSectionHome from "../../components/UI/home/TopSectionHome";
+import MiddleSectionHome from "../../components/home/MiddleSectionHome";
+import LastSectionHome from "../../components/home/LastSectionHome";
+import TopSectionHome from "../../components/home/TopSectionHome";
 
 function Home() {
   return (

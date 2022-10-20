@@ -1,7 +1,7 @@
 import React from "react";
 
 /// data
-import { cards } from "./data";
+import { information } from "../../data/globalData";
 
 // style components
 import styled from "styled-components";
@@ -12,7 +12,7 @@ function CardsFilter() {
   return (
     <>
       <MainCards>
-        {cards.map((card) => (
+        {information.categoryFilters.map((card) => (
           <Card key={card.title}>
             <p>{card.title}</p>
             <sapn>{card.category1}</sapn>

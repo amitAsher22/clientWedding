@@ -5,7 +5,7 @@ import styled from "styled-components";
 /// react-dom
 import { Link } from "react-router-dom";
 
-/// pages > components
+/// pages
 import EventsGardens from "../../pages/celebratePlace/EventsGardens";
 import EventHall from "../../pages/celebratePlace/EventHall";
 import BusinessEvents from "../../pages/celebratePlace/BusinessEvents";
