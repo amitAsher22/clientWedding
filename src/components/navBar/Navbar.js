@@ -131,7 +131,7 @@ function Navbar() {
           <SubDivNavBar key={category.title}>
             <NameCategoryNavBar>{category.title}</NameCategoryNavBar>
             {category.subitems.map((sub) => (
-              <DropDownMenu opDownMenu key={sub.title}>
+              <DropDownMenu key={sub.title}>
                 <Link to={sub.path}>{sub.title}</Link>
               </DropDownMenu>
             ))}
@@ -146,37 +146,26 @@ export default Navbar;
 
 const ContainerNavBar = styled.div`
   display: flex;
-  flex-direction: row;
   background-color: rgb(247, 247, 247);
   text-aline: center;
   justify-content: center;
-  padding: 0.5rem 0px;
-  position: -webkit-sticky;
   position: sticky;
-  top: 3rem;
   z-index: 1;
 `;
 
 const DropDownMenu = styled.div`
+  background-color: white;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
   position: relative;
   display: none;
-  background-color: white;
-  max-width: 100%;
-  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
-  height: 3rem;
 `;
 
 const SubDivNavBar = styled.div`
-  position: relative;
   text-align: center;
   font-family: "heebo";
-  max-width: 100%;
-  padding: 0px 2rem;
   border-left: 1px solid black;
-
+  position: relative;
   &:hover {
-    max-width: 100%;
-
     div {
       display: block;
       cursor: pointer;
@@ -187,14 +176,13 @@ const SubDivNavBar = styled.div`
 `;
 
 const NameCategoryNavBar = styled.span`
-  position: relative;
-  text-align: right;
   font-size: 24px;
-  font-weight: 200px;
+  font-weight: 100px;
   color: #373c49;
-  width: 100%;
   margin: 0px 1rem;
   font-family: "Raanan-Light";
+  position: relative;
+
   :hover {
     color: #f9c8cc;
     cursor: context-menu;
