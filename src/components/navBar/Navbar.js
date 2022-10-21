@@ -30,6 +30,7 @@ import { Link } from "react-router-dom";
 import dataNavbar from "../../data/navbar.json";
 
 function Navbar() {
+  console.log(dataNavbar, "dataNavbar");
   return (
     <>
       {/* <ContainerNavBar>
@@ -127,14 +128,16 @@ function Navbar() {
         </SubDivNavBar>
       </ContainerNavBar> */}
       <ContainerNavBar>
-        {dataNavbar.map((category) => (
-          <SubDivNavBar key={category.title}>
-            <NameCategoryNavBar>{category.title}</NameCategoryNavBar>
-            {category.subitems.map((sub) => (
-              <DropDownMenu key={sub.title}>
-                <Link to={sub.path}>{sub.title}</Link>
-              </DropDownMenu>
-            ))}
+        {dataNavbar.map((nameCategory) => (
+          <SubDivNavBar key={nameCategory.title}>
+            <NameCategoryNavBar>{nameCategory.title}</NameCategoryNavBar>
+            <DropDownMenu>
+              {nameCategory.subitems.map((item) => (
+                <div key={item.title}>
+                  <Link to={`${item.path}`}>{item.title}</Link>
+                </div>
+              ))}
+            </DropDownMenu>
           </SubDivNavBar>
         ))}
       </ContainerNavBar>
@@ -154,37 +157,29 @@ const ContainerNavBar = styled.div`
 `;
 
 const DropDownMenu = styled.div`
-  background-color: white;
-  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
-  position: relative;
   display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 100px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0, 2);
+  padding: 12px 16px;
+  z-index: 1;
 `;
 
 const SubDivNavBar = styled.div`
-  text-align: center;
-  font-family: "heebo";
-  border-left: 1px solid black;
   position: relative;
+  display: inline-block;
+  width: 100%;
+  padding: 1rem 2rem;
+
   &:hover {
-    div {
+    display: block;
+    > div {
       display: block;
-      cursor: pointer;
-      height: 100%;
-      width: 100%;
     }
   }
 `;
 
 const NameCategoryNavBar = styled.span`
-  font-size: 24px;
-  font-weight: 100px;
-  color: #373c49;
-  margin: 0px 1rem;
-  font-family: "Raanan-Light";
-  position: relative;
-
-  :hover {
-    color: #f9c8cc;
-    cursor: context-menu;
-  }
+  font-size: 1.5rem;
 `;
