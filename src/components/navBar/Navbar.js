@@ -6,30 +6,33 @@ import styled from "styled-components";
 import { Link } from "react-router-dom";
 
 /// pages
-import EventsGardens from "../../pages/celebratePlace/EventsGardens";
-import EventHall from "../../pages/celebratePlace/EventHall";
-import BusinessEvents from "../../pages/celebratePlace/BusinessEvents";
-import WeddingDress from "../../pages/Bride&Groom/WeddingDress";
-import EveningDress from "../../pages/Bride&Groom/EveningDress";
-import GroomSuit from "../../pages/Bride&Groom/GroomSuit";
-import EventsPhotography from "../../pages/Photographs/EventsPhotography";
-import Stills from "../../pages/Photographs/Stills";
-import Video from "../../pages/Photographs/Video";
-import Dj from "../../pages/music/Dj";
-import RecordingStudio from "../../pages/music/RecordingStudio";
-import ReceptionBands from "../../pages/music/ReceptionBands";
-import Catering from "../../pages/cateringAndBar/Catering";
-import SweetsBar from "../../pages/cateringAndBar/SweetsBar";
-import Bar from "../../pages/cateringAndBar/Bar";
-import WeddingDeals from "../../pages/Deals/WeddingDeals";
-import EventsGardensHall from "../../pages/Deals/EventsGardensHall";
-import Kamakesef from "../../pages/UsefulTools/Kamakesef";
-import QandA from "../../pages/UsefulTools/QandA";
+// import EventsGardens from "../../pages/celebratePlace/EventsGardens";
+// import EventHall from "../../pages/celebratePlace/EventHall";
+// import BusinessEvents from "../../pages/celebratePlace/BusinessEvents";
+// import WeddingDress from "../../pages/Bride&Groom/WeddingDress";
+// import EveningDress from "../../pages/Bride&Groom/EveningDress";
+// import GroomSuit from "../../pages/Bride&Groom/GroomSuit";
+// import EventsPhotography from "../../pages/Photographs/EventsPhotography";
+// import Stills from "../../pages/Photographs/Stills";
+// import Video from "../../pages/Photographs/Video";
+// import Dj from "../../pages/music/Dj";
+// import RecordingStudio from "../../pages/music/RecordingStudio";
+// import ReceptionBands from "../../pages/music/ReceptionBands";
+// import Catering from "../../pages/cateringAndBar/Catering";
+// import SweetsBar from "../../pages/cateringAndBar/SweetsBar";
+// import Bar from "../../pages/cateringAndBar/Bar";
+// import WeddingDeals from "../../pages/Deals/WeddingDeals";
+// import EventsGardensHall from "../../pages/Deals/EventsGardensHall";
+// import Kamakesef from "../../pages/UsefulTools/Kamakesef";
+// import QandA from "../../pages/UsefulTools/QandA";
+
+/// data
+import dataNavbar from "../../data/navbar.json";
 
 function Navbar() {
   return (
     <>
-      <ContainerNavBar>
+      {/* <ContainerNavBar>
         <SubDivNavBar>
           <NameCategoryNavBar>מקום לחגוג</NameCategoryNavBar>
           <DropDownMenu>
@@ -122,6 +125,18 @@ function Navbar() {
             </Link>
           </DropDownMenu>
         </SubDivNavBar>
+      </ContainerNavBar> */}
+      <ContainerNavBar>
+        {dataNavbar.map((category) => (
+          <SubDivNavBar key={category.title}>
+            <NameCategoryNavBar>{category.title}</NameCategoryNavBar>
+            {category.subitems.map((sub) => (
+              <DropDownMenu opDownMenu key={sub.title}>
+                <Link to={sub.path}>{sub.title}</Link>
+              </DropDownMenu>
+            ))}
+          </SubDivNavBar>
+        ))}
       </ContainerNavBar>
     </>
   );
@@ -143,12 +158,12 @@ const ContainerNavBar = styled.div`
 `;
 
 const DropDownMenu = styled.div`
-  position: absolute;
+  position: relative;
   display: none;
   background-color: white;
-  padding: 1rem 0px;
   max-width: 100%;
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  height: 3rem;
 `;
 
 const SubDivNavBar = styled.div`
@@ -158,22 +173,21 @@ const SubDivNavBar = styled.div`
   max-width: 100%;
   padding: 0px 2rem;
   border-left: 1px solid black;
+
   &:hover {
     max-width: 100%;
 
     div {
       display: block;
       cursor: pointer;
-      max-width: 100%;
-      display: flex;
-      flex-direction: column;
-      margin: 0px 0.5rem;
-      text-align: right;
+      height: 100%;
+      width: 100%;
     }
   }
 `;
 
 const NameCategoryNavBar = styled.span`
+  position: relative;
   text-align: right;
   font-size: 24px;
   font-weight: 200px;

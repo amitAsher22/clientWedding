@@ -8,6 +8,8 @@ import { MdOutlineRestaurant } from "react-icons/md";
 import { FaIdeal } from "react-icons/fa";
 import { BsStar } from "react-icons/bs";
 
+//// components
+
 export const information = {
   pages: [],
   components: [

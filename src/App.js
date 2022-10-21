@@ -28,11 +28,7 @@ import QandA from "./pages/UsefulTools/QandA";
 
 import CardsFilter from "./components/cardsFilter/CardsFilter";
 
-/// data
-import { information } from ".././src/data/globalData.js";
-
 function App() {
-  console.log(information);
   return (
     <>
       <SubNavBar />

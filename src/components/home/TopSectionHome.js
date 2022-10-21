@@ -9,20 +9,19 @@ import { Link } from "react-router-dom";
 import { information } from "../../data/globalData";
 
 function TopSectionHome() {
+  console.log(information);
   return (
     <>
       <Container>
         <MainDiv>
-          <TitleOne>מסדרים הכל ליום הגדול</TitleOne>
-          <TitleTwo>
-            כל הספקים לחתונה במקום אחד, עם כלים שיעזרו לכם לעשות סדר
-          </TitleTwo>
+          <TitleOne>{information.components[0].TitleOne}</TitleOne>
+          <TitleTwo>{information.components[0].titleTwo}</TitleTwo>
         </MainDiv>
         <GridDivCards>
           {information.components[0].TopSectionHome.map((card) => (
             <Link to={`/navbar/${card.link}`} key={card.title}>
               <SubGrid>
-                <div>{card.icon()}</div>
+                <div>{card.icon}</div>
                 <div>{card.title}</div>
               </SubGrid>
             </Link>

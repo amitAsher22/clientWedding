@@ -15,11 +15,11 @@ function CardsFilter() {
         {information.categoryFilters.map((card) => (
           <Card key={card.title}>
             <p>{card.title}</p>
-            <sapn>{card.category1}</sapn>
-            <sapn>{card.category2}</sapn>
-            <sapn>{card.category3}</sapn>
-            <sapn>{card.category4}</sapn>
-            <sapn>{card.category5}</sapn>
+            <span>{card.category1}</span>
+            <span>{card.category2}</span>
+            <span>{card.category3}</span>
+            <span>{card.category4}</span>
+            <span>{card.category5}</span>
           </Card>
         ))}
       </MainCards>
