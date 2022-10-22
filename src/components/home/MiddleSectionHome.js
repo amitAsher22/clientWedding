@@ -3,9 +3,6 @@ import React from "react";
 // style components
 import styled from "styled-components";
 
-/// imges > arya.png
-import img from "../../imges/arya.png";
-
 function MiddleSectionHome() {
   return (
     <MainDiv>
@@ -19,7 +16,7 @@ function MiddleSectionHome() {
         </SectionOne>
         <SectionTwo>
           <Title>אריא</Title>
-          <img src={img} alt="arya" />
+          <img src="/images/arya.png" alt="arya" />
         </SectionTwo>
       </SubMain>
     </MainDiv>

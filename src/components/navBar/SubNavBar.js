@@ -7,10 +7,6 @@ import styled from "styled-components";
 import { FcSearch } from "react-icons/fc";
 import { BsPersonSquare } from "react-icons/bs";
 
-// image Logo
-import logoImg from "../../imges/myday.png";
-import weddinglogo from "../../imges/weddinglogo.png";
-
 /// Avatar-react
 import Avatar from "react-avatar";
 
@@ -43,10 +39,20 @@ function SubNavBar() {
       <DivLeftSide>
         <DivAvatarImg>
           <Link to="/LikesPage">
-            <Avatar round={true} src={weddinglogo} alt="mylogo" size="100%" />
+            <Avatar
+              round={true}
+              src={"/images/weddinglogo.png"}
+              alt="mylogo"
+              size="100%"
+            />
           </Link>
           <Link to="/">
-            <Avatar round={true} src={logoImg} alt="mylogo" size="100%" />
+            <Avatar
+              round={true}
+              src={"/images/myday.png"}
+              alt="mylogo"
+              size="100%"
+            />
           </Link>
         </DivAvatarImg>
       </DivLeftSide>

@@ -3,12 +3,6 @@ import React from "react";
 // style components
 import styled from "styled-components";
 
-/// from file images > {all images}
-import img1 from "../../imges/imgOne.jpeg";
-import img2 from "../../imges/imgTwo.jpeg";
-import img3 from "../../imges/man.jpeg";
-import img4 from "../../imges/photo.jpeg";
-
 /// components style
 import LinkImg from "../home/LinkImg";
 
@@ -25,10 +19,10 @@ function LastSectionHome() {
       </Right>
       <Left>
         <DivImg>
-          <LinkImg img={img1} page="EventsGardens" />
-          <LinkImg img={img2} page="Stills" />
-          <LinkImg img={img3} page="Catering" />
-          <LinkImg img={img4} page="Bar" />
+          <LinkImg img={"/images/imgOne.jpeg"} page="EventsGardens" />
+          <LinkImg img={"/images/imgTwo.jpeg"} page="Stills" />
+          <LinkImg img={"/images/man.jpeg"} page="Catering" />
+          <LinkImg img={"/images/photo.jpeg"} page="Bar" />
         </DivImg>
       </Left>
     </SectionDiv>

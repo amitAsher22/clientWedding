@@ -7,7 +7,7 @@ html {
   margin: auto;
   height: 100%;
   background-color: #fae0e0;
-  background-image: url('./imges/background.png');
+  background-image: url(../public/images/background.png);
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
