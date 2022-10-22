@@ -154,32 +154,36 @@ const ContainerNavBar = styled.div`
   justify-content: center;
   position: sticky;
   z-index: 1;
+  top: 3.5rem;
 `;
 
 const DropDownMenu = styled.div`
   display: none;
   position: absolute;
   background-color: #f9f9f9;
-  min-width: 100px;
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0, 2);
-  padding: 12px 16px;
-  z-index: 1;
+
+  width: 100%;
+  background-color: white;
+  font-size: 100%;
+  text-aline: center;
 `;
 
 const SubDivNavBar = styled.div`
   position: relative;
   display: inline-block;
-  width: 100%;
-  padding: 1rem 2rem;
+  padding: 0px 2rem;
+  text-aline: center;
 
   &:hover {
     display: block;
     > div {
       display: block;
+      width: 100%;
     }
   }
 `;
 
 const NameCategoryNavBar = styled.span`
-  font-size: 1.5rem;
+  font-size: 2rem;
 `;
