@@ -33,16 +33,15 @@ export default CardsFilter;
 
 const MainCards = styled.div`
   display: flex;
-  width: 100%;
-  margin-top: 10rem;
-  flex-flow: center;
-  justify-content: center;
+  width: 80%;
+  margin: auto;
+  padding-top: 4rem;
 `;
 
 const Card = styled.div`
   border: 2px solid black;
-  padding: 4rem;
-
+  padding: 2rem;
+  width: 100%;
   display: flex;
   flex-direction: column;
   background-color: white;

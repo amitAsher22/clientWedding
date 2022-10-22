@@ -44,14 +44,7 @@ export const information = {
       category4: "איזור הצפון",
       category5: "איזור ירושלים",
     },
-    {
-      title: "קונספט",
-      category1: "שישי",
-      category2: "עסקי",
-      category3: "קטן ואינטימי",
-      category4: "אירוע בטבע",
-      category5: "על הים",
-    },
+
     {
       title: "כמה מוזמנים",
       category1: "150-200",
