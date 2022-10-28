@@ -38,7 +38,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="LikesPage" element={<LiksPage />} />
-          <Route path="/user/:idUser" element={<CardById />} />
+          <Route path="/Supply/:idUser" element={<CardById />} />
           <Route path="/navbar" element={<CardsFilter />}>
             <Route path="EventsGardens" element={<EventsGardens />} />
             <Route path="EventHall" element={<EventHall />} />

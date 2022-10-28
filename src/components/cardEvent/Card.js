@@ -14,7 +14,7 @@ function Card({ card }) {
   const [like, setLike] = useState(true);
 
   return (
-    <Link to={`/user/${card.id}`}>
+    <Link to={`/Supply/${card.id}`}>
       <OneCard>
         <DivImage>
           <img src={card.MainImage} width="100%" height="100%" alt="img2" />
