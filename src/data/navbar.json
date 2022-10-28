@@ -1,0 +1,120 @@
+[
+  {
+    "title": "מקום לחגוג",
+    "path": "",
+    "subitems": [
+      {
+        "title": "גני אירועים",
+        "path": "/navbar/EventsGardens"
+      },
+      {
+        "title": "אולמות אירועים",
+        "path": "/navbar/EventHall"
+      },
+      {
+        "title": "אירוע עסקי",
+        "path": "/navbar/BusinessEvents"
+      }
+    ]
+  },
+  {
+    "title": "לחתן והכלה",
+    "path": "",
+    "subitems": [
+      {
+        "title": "WeddingDress",
+        "path": "/navbar/WeddingDress"
+      },
+      {
+        "title": "EveningDress",
+        "path": "/navbar/EveningDress"
+      },
+      {
+        "title": "GroomSuit",
+        "path": "/navbar/GroomSuit"
+      }
+    ]
+  },
+  {
+    "title": "צילום",
+    "path": "",
+    "subitems": [
+      {
+        "title": "EventsPhotography",
+        "path": "/navbar/EventsPhotography"
+      },
+      {
+        "title": "Stills",
+        "path": "/navbar/Stills"
+      },
+      {
+        "title": "Video",
+        "path": "/navbar/Video"
+      }
+    ]
+  },
+  {
+    "title": "מוזיקה",
+    "path": "",
+    "subitems": [
+      {
+        "title": "Dj",
+        "path": "/navbar/Dj"
+      },
+      {
+        "title": "RecordingStudio",
+        "path": "/navbar/RecordingStudio"
+      },
+      {
+        "title": "ReceptionBands",
+        "path": "/navbar/ReceptionBands"
+      }
+    ]
+  },
+  {
+    "title": "קייטרינג ובר",
+    "path": "",
+    "subitems": [
+      {
+        "title": "Catering",
+        "path": "/navbar/Catering"
+      },
+      {
+        "title": "SweetsBar",
+        "path": "/navbar/SweetsBar"
+      },
+      {
+        "title": "Bar",
+        "path": "/navbar/Bar"
+      }
+    ]
+  },
+  {
+    "title": "מבצעים",
+    "path": "",
+    "subitems": [
+      {
+        "title": "WeddingDeals",
+        "path": "/navbar/WeddingDeals"
+      },
+      {
+        "title": "EventsGardensHall",
+        "path": "/navbar/EventsGardensHall"
+      }
+    ]
+  },
+  {
+    "title": "כלים שימושים",
+    "path": "",
+    "subitems": [
+      {
+        "title": "Kamakesef",
+        "path": "/navbar/Kamakesef"
+      },
+      {
+        "title": "QandA ",
+        "path": "/navbar/QandA"
+      }
+    ]
+  }
+]
