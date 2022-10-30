@@ -34,7 +34,7 @@
     "guests": "50-800",
     "PricePerServing": "300-1000",
     "when": [
-      "קיץ",
+      "קיץ ",
       "חורף"
     ],
     "cosher": "כשר",
@@ -42,9 +42,9 @@
     "number": "053-9369385",
     "website": "https://arya.mitchatnim.co.il/",
     "concept": [
-      "אירוע בטבע",
-      "שישי צהריים",
-      "עסקי"
+      " אירוע בטבע ",
+      "שישי צהריים ",
+      " עסקי "
     ],
     "imageCover": "/images/celebratePlace/EventGardens/coverArya.jpg"
   },
@@ -59,8 +59,8 @@
     "guests": "200-1000",
     "PricePerServing": "200-300",
     "when": [
-      "קיץ",
-      "חורף"
+      "קיץ ",
+      "חורף  "
     ],
     "cosher": "כשר",
     "location": "בני-ראם",
@@ -69,7 +69,8 @@
     "concept": [
       "שישי צהריים",
       "עסקי"
-    ]
+    ],
+    "imageCover": "/images/celebratePlace/EventGardens/nasya.jpg"
   },
   {
     "id": "789",
@@ -95,7 +96,8 @@
     "concept": [
       "שישי צהריים",
       "עסקי"
-    ]
+    ],
+    "imageCover": "/images/celebratePlace/EventGardens/alegria.png"
   },
   {
     "id": "91011",

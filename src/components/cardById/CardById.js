@@ -8,6 +8,11 @@ import data from "../../data/EventGardens.json";
 /// get style components
 import styled from "styled-components";
 
+/// react icons
+import { BsTelephone } from "react-icons/bs";
+import { CgWebsite } from "react-icons/cg";
+import { GrLocation } from "react-icons/gr";
+
 function CardById() {
   const params = useParams();
   const idUser = params.idUser;
@@ -45,6 +50,26 @@ function CardById() {
           </Section>
         </DivLeft>
       </SectionDivOne>
+      <SectionDivTwo>
+        <RightDiv>
+          <TitleSectionTwo>{eventData.title}</TitleSectionTwo>
+          <DescriptionEvent>{eventData.description}</DescriptionEvent>
+        </RightDiv>
+        <LeftDiv>
+          <DivTitleAndIcon>
+            <BsTelephone />
+            <SpanTitle>{eventData.number}</SpanTitle>
+          </DivTitleAndIcon>
+          <DivTitleAndIcon>
+            <GrLocation />
+            <SpanTitle> {eventData.location} </SpanTitle>
+          </DivTitleAndIcon>
+          <DivTitleAndIcon>
+            <CgWebsite />
+            <SpanTitle>לאתר במתחתנים </SpanTitle>
+          </DivTitleAndIcon>
+        </LeftDiv>
+      </SectionDivTwo>
     </Container>
   );
 }
@@ -61,8 +86,6 @@ const SectionDivOne = styled.div`
 `;
 
 const DivRight = styled.div`
-  background: red;
-
   width: 30%;
   height: 100%;
   display: flex;
@@ -70,25 +93,26 @@ const DivRight = styled.div`
   justify-content: center;
   flex-direction: column;
   text-align: center;
+  border: 2px solid #f8f8f8;
+  font-size: 2rem;
+  color: #404553;
 `;
 
 const DivLeft = styled.div`
-  background: yellow;
   display: flex;
-
   width: 70%;
-  height: 100%;
-  height: 100%;
   text-align: center;
   margin: auto;
+  height: 100%;
 `;
 
 const Section = styled.div`
-  border: 1px solid black;
+  border: 2px solid #f8f8f8;
   width: 100%;
   display: flex;
   flex-direction: column;
-  padding: 0.5rem 2rem;
+  padding: 0.5rem 0.7rem;
+  height: 100%;
 `;
 
 const Span = styled.span`
@@ -102,4 +126,45 @@ const Title = styled.h1`
   font-weight: normal;
   font-size: 2rem;
   color: #404553;
+`;
+
+const TitleSectionTwo = styled.div`
+  color: #404553;
+  font-family: RaananLight, Asap;
+  font-size: 3rem;
+`;
+
+const DescriptionEvent = styled.p`
+  font-size: 1.2rem;
+`;
+
+const SectionDivTwo = styled.div`
+  display: flex;
+  width: 70%;
+  margin: auto;
+  padding: 1rem;
+  background: white;
+`;
+
+const RightDiv = styled.div`
+  width: 70%;
+`;
+const LeftDiv = styled.div`
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  font-size: 1.5rem;
+`;
+
+const DivTitleAndIcon = styled.div`
+  display: flex;
+  gap: 1rem;
+  font-family: RaananLight, Asap;
+  align-items: center;
+`;
+
+const SpanTitle = styled.span`
+  font-size: 2rem;
 `;

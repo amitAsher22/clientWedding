@@ -1,7 +1,10 @@
 import React from "react";
 
-/// data
+/// render Array oF information cards
 import { information } from "../../data/globalData";
+
+//// import data from EventGardens json
+import data from "../../data/EventGardens.json";
 
 // style components
 import styled from "styled-components";
@@ -9,14 +12,23 @@ import styled from "styled-components";
 import { Outlet } from "react-router-dom";
 
 function CardsFilter() {
+  const filterWant = (categoryName) => {
+    const dataAfterFilter = data.filter((item) => item.want === categoryName);
+    console.log(dataAfterFilter);
+  };
+
   return (
     <>
       <MainCards>
         {information.categoryFilters.map((card) => (
           <Card key={card.title}>
             <TitleCard>{card.title}</TitleCard>
-            <Category>{card.category1}</Category>
-            <Category>{card.category2}</Category>
+            <Category onClick={() => filterWant(card.category1)}>
+              {card.category1}
+            </Category>
+            <Category onClick={() => filterWant(card.category1)}>
+              {card.category2}
+            </Category>
             <Category>{card.category3}</Category>
             <Category>{card.category4}</Category>
             <Category>{card.category5}</Category>
