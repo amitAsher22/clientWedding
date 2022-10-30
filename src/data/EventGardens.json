@@ -120,7 +120,8 @@
     "concept": [
       "קטן ואינטימי",
       "שישי צהריים"
-    ]
+    ],
+    "imageCover": "/images/celebratePlace/EventGardens/sendler.png"
   },
   {
     "id": "111213",
@@ -141,7 +142,8 @@
       "על הים",
       "שישי צהריים",
       "עסקי"
-    ]
+    ],
+    "imageCover": "/images/celebratePlace/EventGardens/Boatdown2.jpg"
   },
   {
     "id": "131415",
@@ -166,7 +168,8 @@
     "concept": [
       "שישי צהריים",
       "עסקי"
-    ]
+    ],
+    "imageCover": "/images/celebratePlace/EventGardens/venetian.jpg"
   },
   {
     "id": "161718",
@@ -219,7 +222,8 @@
       "שישי צהריים",
       "עסקי",
       "אירוע בטבע"
-    ]
+    ],
+    "imageCover": "/images/celebratePlace/EventGardens/Vamoss.png"
   },
   {
     "id": "192021",
