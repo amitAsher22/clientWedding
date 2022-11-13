@@ -26,7 +26,6 @@ import LiksPage from "./pages/Likes/LikesPage";
 import Kamakesef from "./pages/UsefulTools/Kamakesef";
 import QandA from "./pages/UsefulTools/QandA";
 import CardById from "./components/cardById/CardById";
-
 import CardsFilter from "./components/cardsFilter/CardsFilter";
 
 function App() {
@@ -39,9 +38,8 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="LikesPage" element={<LiksPage />} />
           <Route path="/Supply/:idUser" element={<CardById />} />
-          <Route path="/navbar" element={<CardsFilter />}>
+          <Route path="/wedding" element={<CardsFilter />}>
             <Route path="EventsGardens" element={<EventsGardens />} />
-            <Route path="EventHall" element={<EventHall />} />
             <Route path="EventHall" element={<EventHall />} />
             <Route path="BusinessEvents" element={<BusinessEvents />} />
             <Route path="EveningDress" element={<EveningDress />} />

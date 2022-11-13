@@ -13,7 +13,9 @@ function EventHall() {
   const [dataEvent, setDataEvent] = useState([]);
 
   useEffect(() => {
-    const resultAfterFilter = data.filter((element) => element.want === "אולם");
+    const resultAfterFilter = data.filter(
+      (element) => element.EventType === "eventHall"
+    );
     setDataEvent(resultAfterFilter);
   }, [data]);
 

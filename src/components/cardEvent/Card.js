@@ -14,25 +14,27 @@ function Card({ card }) {
   const [like, setLike] = useState(true);
 
   return (
-    <Link to={`/Supply/${card.id}`}>
-      <OneCard>
+    <OneCard>
+      <Link to={`/Supply/${card.id}`}>
         <DivImage>
           <img src={card.MainImage} width="100%" height="100%" alt="img2" />
         </DivImage>
-        <DivIcons>
-          {like ? (
-            <FcLike size={70} onClick={() => setLike(!like)} />
-          ) : (
-            <IoHeartDislikeOutline onClick={() => setLike(!like)} size={70} />
-          )}
-        </DivIcons>
+      </Link>
+      <DivIcons>
+        {like ? (
+          <FcLike size={70} onClick={() => setLike(!like)} />
+        ) : (
+          <IoHeartDislikeOutline onClick={() => setLike(!like)} size={70} />
+        )}
+      </DivIcons>
+      <Link to={`/Supply/${card.id}`}>
         <DivText>
           <p>{card.location}</p>
           <p>{card.title}</p>
           <p>{card.description}</p>
         </DivText>
-      </OneCard>
-    </Link>
+      </Link>
+    </OneCard>
   );
 }
 

@@ -9,8 +9,8 @@ import { FaIdeal } from "react-icons/fa";
 import { BsStar } from "react-icons/bs";
 
 export const cards = [
-  { icon: GiSugarCane, title: "גני אירועים", link: "EventsGardens" },
-  { icon: GiGlassCelebration, title: "אולמות אירועים", link: "EventHall" },
+  { icon: GiSugarCane, title: "eventsGardens", link: "EventsGardens" },
+  { icon: GiGlassCelebration, title: "eventHall", link: "EventHall" },
   { icon: GiAmpleDress, title: "שמלות כלה", link: "WeddingDress" },
   { icon: FaCameraRetro, title: "צילום אירועים", link: "EventsPhotography" },
   { icon: FiMusic, title: "די ג'יי", link: "Dj" },

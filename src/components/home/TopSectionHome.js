@@ -18,7 +18,7 @@ function TopSectionHome() {
         </MainDiv>
         <GridDivCards>
           {information.components[0].TopSectionHome.map((card) => (
-            <Link to={`/navbar/${card.link}`} key={card.title}>
+            <Link to={`/weeding/${card.link}`} key={card.title}>
               <SubGrid>
                 <div>{card.icon}</div>
                 <div>{card.title}</div>

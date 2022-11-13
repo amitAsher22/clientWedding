@@ -13,14 +13,12 @@ import Avatar from "react-avatar";
 /// react-router
 import { Link } from "react-router-dom";
 
-import dataArray from "../../data/EventGardens.json";
-
 function SubNavBar() {
   const [show, setShow] = useState(false);
 
   const showBtnSearch = () => {
     setShow(!show);
-    console.log(dataArray);
+    show ? console.log("close") : console.log("open");
   };
 
   const searchInput = (e) => {

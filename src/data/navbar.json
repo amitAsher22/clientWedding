@@ -2,118 +2,118 @@
   {
     "title": "מקום לחגוג",
     "path": "",
-    "subitems": [
+    "subcategories": [
       {
-        "title": "גני אירועים",
-        "path": "/navbar/EventsGardens"
+        "title": "eventsGardens",
+        "path": "/wedding/EventsGardens"
       },
       {
-        "title": "אולמות אירועים",
-        "path": "/navbar/EventHall"
+        "title": "eventHall",
+        "path": "/wedding/EventHall"
       },
       {
-        "title": "אירוע עסקי",
-        "path": "/navbar/BusinessEvents"
+        "title": "businessEvents",
+        "path": "/wedding/BusinessEvents"
       }
     ]
   },
   {
     "title": "לחתן והכלה",
     "path": "",
-    "subitems": [
+    "subcategories": [
       {
-        "title": "WeddingDress",
-        "path": "/navbar/WeddingDress"
+        "title": "שמלות כלה",
+        "path": "/wedding/WeddingDress"
       },
       {
-        "title": "EveningDress",
-        "path": "/navbar/EveningDress"
+        "title": "שמלות ערב",
+        "path": "/wedding/EveningDress"
       },
       {
-        "title": "GroomSuit",
-        "path": "/navbar/GroomSuit"
+        "title": "חליפות חתן",
+        "path": "/wedding/GroomSuit"
       }
     ]
   },
   {
     "title": "צילום",
     "path": "",
-    "subitems": [
+    "subcategories": [
       {
-        "title": "EventsPhotography",
-        "path": "/navbar/EventsPhotography"
+        "title": "צילום אירועים",
+        "path": "/wedding/EventsPhotography"
       },
       {
-        "title": "Stills",
-        "path": "/navbar/Stills"
+        "title": "צילום סטילס",
+        "path": "/wedding/Stills"
       },
       {
-        "title": "Video",
-        "path": "/navbar/Video"
+        "title": "צילום  וידאו",
+        "path": "/wedding/Video"
       }
     ]
   },
   {
     "title": "מוזיקה",
     "path": "",
-    "subitems": [
+    "subcategories": [
       {
-        "title": "Dj",
-        "path": "/navbar/Dj"
+        "title": " די ג'יי",
+        "path": "/wedding/Dj"
       },
       {
-        "title": "RecordingStudio",
-        "path": "/navbar/RecordingStudio"
+        "title": "אולפן הקלטות",
+        "path": "/wedding/RecordingStudio"
       },
       {
-        "title": "ReceptionBands",
-        "path": "/navbar/ReceptionBands"
+        "title": "הרכב מוזיקלי",
+        "path": "/wedding/ReceptionBands"
       }
     ]
   },
   {
     "title": "קייטרינג ובר",
     "path": "",
-    "subitems": [
+    "subcategories": [
       {
-        "title": "Catering",
-        "path": "/navbar/Catering"
+        "title": "קייטרינג",
+        "path": "/wedding/Catering"
       },
       {
-        "title": "SweetsBar",
-        "path": "/navbar/SweetsBar"
+        "title": "בר מתוקים",
+        "path": "/wedding/SweetsBar"
       },
       {
-        "title": "Bar",
-        "path": "/navbar/Bar"
+        "title": "בר",
+        "path": "/wedding/Bar"
       }
     ]
   },
   {
     "title": "מבצעים",
     "path": "",
-    "subitems": [
+    "subcategories": [
       {
-        "title": "WeddingDeals",
-        "path": "/navbar/WeddingDeals"
+        "title": "כל המבצעים",
+        "path": "/wedding/WeddingDeals"
       },
       {
-        "title": "EventsGardensHall",
-        "path": "/navbar/EventsGardensHall"
+        "title": "גנים ואולמות",
+        "path": "/wedding/EventsGardensHall"
       }
     ]
   },
   {
     "title": "כלים שימושים",
     "path": "",
-    "subitems": [
+    "subcategories": [
       {
-        "title": "Kamakesef",
-        "path": "/navbar/Kamakesef"
+        "title": "כמה כסף",
+        "path": "/wedding/Kamakesef"
       },
       {
-        "title": "QandA ",
-        "path": "/navbar/QandA"
+        "title": "שאלות ותשובות ",
+        "path": "/wedding/QandA"
       }
     ]
   }

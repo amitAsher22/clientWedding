@@ -18,7 +18,7 @@ function Navbar() {
           <SubDivNavBar key={nameCategory.title}>
             <NameCategoryNavBar>{nameCategory.title}</NameCategoryNavBar>
             <DropDownMenu>
-              {nameCategory.subitems.map((item, index) => (
+              {nameCategory.subcategories.map((item, index) => (
                 <DiveLinks key={index}>
                   <RiArrowDropLeftFill />
                   <Link to={`${item.path}`}>{item.title}</Link>

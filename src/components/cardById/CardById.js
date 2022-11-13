@@ -30,7 +30,7 @@ function CardById() {
         <DivLeft className="left">
           <Section className="one">
             <Title>אני רוצה..</Title>
-            <Span>{eventData.want}</Span>
+            <Span>{eventData.EventType}</Span>
           </Section>
           <Section className="two">
             <Title>קונספט</Title>

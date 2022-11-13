@@ -13,7 +13,9 @@ function BusinessEvents() {
   const [dataBusiness, setDataBusiness] = useState([]);
 
   useEffect(() => {
-    const resultAfterFilter = data.filter((element) => element.want === "עסקי");
+    const resultAfterFilter = data.filter(
+      (element) => element.EventType === "businessEvents"
+    );
     setDataBusiness(resultAfterFilter);
   }, [data]);
   return (

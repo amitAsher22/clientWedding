@@ -3,18 +3,23 @@ import React, { useState, useEffect } from "react";
 /// component CardEvent
 import Card from "../../components/cardEvent/Card";
 
-/// data
-import data from "../../data/EventGardens.json";
-
 // style components
 import styled from "styled-components";
 
+///axios
+import axios from "axios";
+
 function EventsGardens() {
   const [dataGardens, setDataGardens] = useState([]);
+
   useEffect(() => {
-    const result = data.filter((element) => element.want === "גן ואולם");
-    setDataGardens(result);
-  }, [data]);
+    axios.get("http://localhost:8000/suppliers").then((response) => {
+      const result = response.data.filter(
+        (element) => element.EventType === "eventsGardens"
+      );
+      setDataGardens(result);
+    });
+  }, []);
 
   return (
     <MainCard>
