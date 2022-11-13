@@ -6,18 +6,21 @@ import styled from "styled-components";
 ///components
 import Card from "../../components/cardEvent/Card";
 
-/// get data
-import data from "../../data/EventGardens.json";
+///axios
+import axios from "axios";
 
 function BusinessEvents() {
   const [dataBusiness, setDataBusiness] = useState([]);
 
   useEffect(() => {
-    const resultAfterFilter = data.filter(
-      (element) => element.EventType === "businessEvents"
-    );
-    setDataBusiness(resultAfterFilter);
-  }, [data]);
+    axios.get("http://localhost:8000/suppliers").then((response) => {
+      const result = response.data.filter(
+        (element) => element.EventType === "businessEvents"
+      );
+      setDataBusiness(result);
+    });
+  }, []);
+
   return (
     <MainCard>
       {dataBusiness.map((card, index) => {

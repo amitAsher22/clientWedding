@@ -9,15 +9,20 @@ import data from "../../data/EventGardens.json";
 ///components
 import Card from "../../components/cardEvent/Card";
 
+///axios
+import axios from "axios";
+
 function EventHall() {
   const [dataEvent, setDataEvent] = useState([]);
 
   useEffect(() => {
-    const resultAfterFilter = data.filter(
-      (element) => element.EventType === "eventHall"
-    );
-    setDataEvent(resultAfterFilter);
-  }, [data]);
+    axios.get("http://localhost:8000/suppliers").then((response) => {
+      const result = response.data.filter(
+        (element) => element.EventType === "eventHall"
+      );
+      setDataEvent(result);
+    });
+  }, []);
 
   return (
     <MainCard>
